@@ -1,6 +1,28 @@
+@import './var.scss';
+
 body, html {
-  min-height: 100vh;
+  height: 100vh;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background: $background;
+  color: $color;
+}
+
+#root {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  header {
+    min-height: 10%;
+  }
+
+  main {
+    min-height: 90%;
+  }
 }

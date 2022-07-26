@@ -1,8 +1,4 @@
-$media: (
-    tablet: 768px,
-    desktop: 992px,
-    large: 1200px,
-);
+@import './var.scss';
 
 /**
  * @mixin md
