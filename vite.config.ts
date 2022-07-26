@@ -27,7 +27,14 @@ export default defineConfig(({ command, mode }) => {
     }
 
   } else {
-    return generalConfig
+    return {
+      ...generalConfig,
+      build: {
+        outDir: 'build',
+        chunkSizeWarningLimit: 1000,
+        minify: 'esbuild',
+      },
+    }
   }
   
 })
