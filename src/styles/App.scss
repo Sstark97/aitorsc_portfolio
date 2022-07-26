@@ -1,3 +1,5 @@
+@import './mixins';
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -38,4 +40,19 @@
 
 .read-the-docs {
   color: #888;
+}
+
+#test {
+
+  @include md(tablet) {
+    background: #0f0;
+  }
+
+  @include md(desktop) {
+    background: #00f;
+  }
+
+  @include md(large) {
+    background: #f0f;
+  }
 }

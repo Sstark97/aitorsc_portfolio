@@ -19,6 +19,9 @@
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "paths": {
-    "assets": ["./src/assets/*"]
+    "assets": ["./src/assets/*"],
+    "components": ["./src/components/*"],
+    "containers": ["./src/containers/*"],
+    "styles": ["./src/styles/*"],
   }
 }

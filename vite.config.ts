@@ -5,6 +5,9 @@ import { resolve } from 'path'
 const getAlliases = () => {
   return {
     '@assets': resolve(__dirname, './src/assets'),
+    '@containers': resolve(__dirname, './src/containers'),
+    '@components': resolve(__dirname, './src/components'),
+    '@styles': resolve(__dirname, './src/styles'),
   }
 }
 
