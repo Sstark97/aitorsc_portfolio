@@ -120,7 +120,7 @@
     }
 }
 
-#hamburger_check:checked ~ nav {
+#hamburger_check:checked ~ .hamburger_nav {
     display: flex;
     flex-direction: column;
     align-items: center;

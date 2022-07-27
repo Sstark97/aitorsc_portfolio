@@ -12,6 +12,10 @@ body, html {
   font-family: $font_family;
 }
 
+p {
+  max-width: 75ch;
+}
+
 #root {
   height: 100%;
 }
