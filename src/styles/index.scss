@@ -1,6 +1,41 @@
+@import './var.scss';
+@import './mixins.scss';
+
 body, html {
-  min-height: 100vh;
+  height: 100vh;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
+  background: $background;
+  color: $color;
+  font-family: $font_family;
+}
+
+#root {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  header {
+    min-height: 10%;
+    background: #000;
+  }
+
+}
+
+@include md(desktop) {
+  .container {
+    flex-direction: row;
+
+    header {
+      min-width: 10%;
+      background: #181818;
+    }
+  }
+
 }

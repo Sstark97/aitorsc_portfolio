@@ -23,6 +23,7 @@
     "components": ["./src/components/*"],
     "containers": ["./src/containers/*"],
     "pages": ["./src/pages/*"],
+    "routes": ["./src/routes/*"],
     "styles": ["./src/styles/*"],
   }
 }

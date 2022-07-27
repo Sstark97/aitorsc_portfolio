@@ -8,6 +8,7 @@ const getAlliases = () => {
     '@components': resolve(__dirname, './src/components'),
     '@containers': resolve(__dirname, './src/containers'),
     '@pages': resolve(__dirname, './src/pages'),
+    '@routes': resolve(__dirname, './src/routes'),
     '@styles': resolve(__dirname, './src/styles'),
   }
 }
