@@ -10,6 +10,7 @@
 
     nav {
         display: none;
+        height: 100%;
     }
 
     label {
@@ -38,7 +39,7 @@
     top: 0;
     z-index: 4;
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     background-color: $background;
 
     div {
@@ -78,7 +79,7 @@
         }
 
         .banner_logo {
-            font-size: 4.5rem;
+            font-size: 3.8rem;
         }
 
         .banner_name {
@@ -92,4 +93,20 @@
             color: #a5a5a5;
         }
     }
+
+    #social_container {
+        border-bottom: none;
+        position: absolute;
+        bottom: 0.4rem;
+    }
+    
+    .social_icons {
+        margin-right: 0.7rem;
+    
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+
 }
