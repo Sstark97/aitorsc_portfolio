@@ -8,11 +8,16 @@ const NavBar = ({ handleClickHamburger }: NavBarProps) => {
 
   return (
     <nav className="hamburger_nav">
+        <div className="banner">
+            <div className="banner_logo">A</div>
+            <div className="banner_name">Aitor</div>
+            <div className="banner_ocuppation">Full Stack Developer</div>
+        </div>
       {ROUTES.map((route: RouteNav) => {
-        const route_class = route.route_name === "Home" ? "first_element" : "";
+        const route_id = route.route_name === "Home" ? "first_element" : "";
         const link_class = pathname === route.route ? "link_focus" : ""
           return (
-            <div className={route_class}>
+            <div id={route_id}>
               <Link
                 to={route.route}
                 className={link_class}

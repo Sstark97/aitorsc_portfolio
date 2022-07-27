@@ -1,4 +1,5 @@
 @import './mixins.scss';
+@import './var.scss';
 
 .nav-container {
     display: flex;
@@ -12,8 +13,8 @@
     }
 
     label {
-        width: 3rem;
-        height: 3rem;
+        width: 2.5rem;
+        height: 2.5rem;
         padding: 0.5rem;
         position: relative;
         z-index: 5;
@@ -29,8 +30,6 @@
     }
 }
 
-
-
 #hamburger_check:checked ~ nav {
     display: flex;
     flex-direction: column;
@@ -40,7 +39,7 @@
     z-index: 4;
     width: 100vw;
     height: 100vh;
-    background-color: #000;
+    background-color: $background;
 
     div {
         display: flex;
@@ -57,10 +56,40 @@
 
     #first_element {
         border-top: 1px solid #282828;
-        margin-top: 4rem;
+        margin-top: 1.8rem;
     }
 
     .link_focus {
         color: red;
+    }
+
+    .banner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0.2rem;
+        background: #000;
+        margin-bottom: 2.3rem;
+
+        div {
+            border-bottom: none;
+            padding: 0;
+        }
+
+        .banner_logo {
+            font-size: 4.5rem;
+        }
+
+        .banner_name {
+            font-size: 1.7rem;
+            padding-bottom: 0.9rem;
+        }
+
+        .banner_ocuppation {
+            font-size: 0.9rem;
+            padding-bottom: 0.9rem;
+            color: #a5a5a5;
+        }
     }
 }
