@@ -31,9 +31,11 @@ body, html {
 @include md(desktop) {
   .container {
     flex-direction: row;
+
+    header {
+      min-width: 10%;
+      background: #181818;
+    }
   }
 
-  header {
-    min-width: 10%;
-  }
 }

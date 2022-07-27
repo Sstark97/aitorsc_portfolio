@@ -2,6 +2,7 @@ import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
 import NavBar from "@components/NavBar";
+import DesktopNavBar from "@components/DesktopNavBar";
 import "@styles/nav.scss";
 
 const Nav = () => {
@@ -25,6 +26,7 @@ const Nav = () => {
         {!isOpen && <GiHamburgerMenu />}
       </label>
       <NavBar handleClickHamburger={handleClickHamburger}/>
+      <DesktopNavBar />
     </div>
   );
 };

@@ -1,15 +1,15 @@
 import { Link, useLocation } from "react-router-dom";
 import SocialNetworks from "@components/SocialNetworks";
 import Banner from "./Banner";
-import { NavBarProps, RouteNav } from "../types";
+import { RouteNav } from "../types";
 import { ROUTES } from "../const";
 import "@styles/nav.scss";
 
-const NavBar = ({ handleClickHamburger }: NavBarProps) => {
+const NavBar = () => {
   const { pathname } = useLocation();
 
   return (
-    <nav className="hamburger_nav">
+    <nav className="desktop_nav">
         <Banner />
         {ROUTES.map((route: RouteNav) => {
         const route_id = route.route_name === "Home" ? "first_element" : "";
@@ -19,7 +19,6 @@ const NavBar = ({ handleClickHamburger }: NavBarProps) => {
               <Link
                 to={route.route}
                 className={link_class}
-                onClick={handleClickHamburger}
               >
                 {route.route_name}
               </Link>
