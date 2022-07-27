@@ -8,7 +8,7 @@
     align-items: flex-end;
     min-height: 100%;
 
-    nav {
+    .hamburger_nav {
         display: none;
         height: 100%;
     }
@@ -28,6 +28,13 @@
 
     input[type="checkbox"] {
         opacity: 0;
+    }
+
+    @include md(desktop) {
+        
+        label {
+            display: none;
+        }
     }
 }
 
