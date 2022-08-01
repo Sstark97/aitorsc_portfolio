@@ -1,0 +1,8 @@
+@import '@styles/mixins.scss';
+@import './nav_bar.scss';
+
+@include md (desktop) {
+    .nav-container {
+        justify-content: flex-start;
+    }
+}

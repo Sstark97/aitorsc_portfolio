@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useGlobalContext } from "@containers/AppProvider";
 import { AppState } from "../types";
-import "@styles/nav.scss";
+import "@styles/containers/nav.scss";
 
 const Banner = () => {
   const [name, setName] = useState<string>("");

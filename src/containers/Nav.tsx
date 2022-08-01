@@ -3,7 +3,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
 import NavBar from "@components/NavBar";
 import DesktopNavBar from "@components/DesktopNavBar";
-import "@styles/nav.scss";
+import "@styles/containers/nav.scss";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
