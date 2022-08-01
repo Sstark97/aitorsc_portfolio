@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '@api/index';
 
 const Home = () => {
 
@@ -7,12 +7,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const userData: any = await axios.get(`${import.meta.env.VITE_API}api/v1/user`, {
-        headers: {
-          'x-access-tokens': import.meta.env.VITE_API_KEY
-        }
-      });
-
+      const userData: any = await api.get("user");
       setData(userData.data);
     }
 
