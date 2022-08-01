@@ -1,5 +1,12 @@
 import { IconType } from "react-icons";
 
+// Context
+
+export interface AppState {
+    portFolio: any,
+    loadPortfolio():void
+}
+
 // React Elements
 export interface ChildrenProps{
     children?: React.ReactNode[]
