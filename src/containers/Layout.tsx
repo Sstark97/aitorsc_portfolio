@@ -5,7 +5,7 @@ import Nav from "./Nav";
 import "@styles/index.scss";
 
 const Layout = ({ children }: ChildrenProps) => {
-  const { loadPortfolio, portfolio } = useGlobalContext();
+  const { loadPortfolio } = useGlobalContext();
 
   useEffect(() => {
     loadPortfolio();

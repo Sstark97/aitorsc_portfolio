@@ -1,12 +1,5 @@
 import { IconType } from "react-icons";
 
-// Context
-
-export interface AppState {
-    portFolio: any,
-    loadPortfolio():void
-}
-
 // React Elements
 export interface ChildrenProps{
     children?: React.ReactNode[]
@@ -24,4 +17,20 @@ export interface RouteNav {
 
 export interface SocialRoutes extends Required<Pick<RouteNav, 'route'>> {
     icon: IconType;
+}
+
+export interface Portfolio {
+    adress: string,
+    avatar: string,
+    email: string,
+    name: string,
+    phone: string,
+    presentation: string,
+    surname: string,
+}
+
+// Context
+export interface AppState {
+    portFolio: Portfolio,
+    loadPortfolio():void
 }

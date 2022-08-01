@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { useGlobalContext } from "@containers/AppProvider";
+import { AppState } from "../types";
 import "@styles/nav.scss";
 
 const Banner = () => {
   const [name, setName] = useState<string>("");
-  const { portFolio } = useGlobalContext();
+  const { portFolio }: AppState = useGlobalContext();
 
   useEffect(() => {
     if(portFolio !== undefined) {
