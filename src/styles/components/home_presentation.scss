@@ -1,4 +1,5 @@
 @import '@styles/var.scss';
+@import '@styles/animation.scss';
 @import '@styles/mixins.scss';
 
 .presentation_header {
@@ -103,16 +104,6 @@
 
   to {
     width: 21.2rem;
-  }
-}
-
-@keyframes animated-presentation {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
   }
 }
 
