@@ -18,3 +18,19 @@ export interface RouteNav {
 export interface SocialRoutes extends Required<Pick<RouteNav, 'route'>> {
     icon: IconType;
 }
+
+export interface Portfolio {
+    adress: string,
+    avatar: string,
+    email: string,
+    name: string,
+    phone: string,
+    presentation: string,
+    surname: string,
+}
+
+// Context
+export interface AppState {
+    portFolio: Portfolio,
+    loadPortfolio():void
+}

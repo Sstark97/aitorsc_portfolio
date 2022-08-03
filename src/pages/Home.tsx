@@ -1,7 +1,5 @@
-const Home = () => (
-    <div className="home">
-      <p>Portfolio Home!</p>
-    </div>
-)
+import HomeContainer from "@containers/HomeContainer";
 
-export default Home
+const Home = () => <HomeContainer />;
+
+export default Home;

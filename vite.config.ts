@@ -10,6 +10,7 @@ const getAlliases = () => {
     '@pages': resolve(__dirname, './src/pages'),
     '@routes': resolve(__dirname, './src/routes'),
     '@styles': resolve(__dirname, './src/styles'),
+    '@api': resolve(__dirname, './src/api'),
   }
 }
 

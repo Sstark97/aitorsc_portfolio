@@ -1,5 +1,5 @@
-@import './mixins.scss';
-@import './var.scss';
+@import '@styles/mixins.scss';
+@import '@styles/var.scss';
 
 .nav-container {
     display: flex;
@@ -7,6 +7,7 @@
     justify-content: flex-end;
     align-items: flex-end;
     min-height: 100%;
+    background: $background;
 
     .hamburger_nav {
         display: none;
@@ -61,7 +62,7 @@
 
             a {
                 text-decoration: none;
-                color: #909096;
+                color: $secondary;
             }
         
             #first_element {
@@ -70,7 +71,7 @@
             }
         
             .link_focus {
-                color: red;
+                color: $primary;
             }
         
             .banner {
@@ -105,6 +106,7 @@
                 border-bottom: none;
                 position: absolute;
                 bottom: 11rem;
+                padding: 0;
             }
             
             .social_icons {
@@ -120,88 +122,9 @@
     }
 }
 
-#hamburger_check:checked ~ nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    top: 0;
-    z-index: 4;
-    width: 100vw;
-    height: 90vh;
-    background-color: $background;
-
-    div {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        border-bottom: 1px solid #282828;
-        padding: 1rem;
-    }
-
-    a {
-        text-decoration: none;
-        color: #909096;
-    }
-
-    #first_element {
-        border-top: 1px solid #282828;
-        margin-top: 1.8rem;
-    }
-
-    .link_focus {
-        color: red;
-    }
-
-    .banner {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0.2rem;
-        background: #000;
-        margin-bottom: 2.3rem;
-
-        div {
-            border-bottom: none;
-            padding: 0;
-        }
-
-        .banner_logo {
-            font-size: 3.8rem;
-        }
-
-        .banner_name {
-            font-size: 1.7rem;
-            padding-bottom: 0.9rem;
-        }
-
-        .banner_ocuppation {
-            font-size: 0.9rem;
-            padding-bottom: 0.9rem;
-            color: #a5a5a5;
-        }
-    }
-
-    #social_container {
-        border-bottom: none;
-        position: absolute;
-        bottom: 0.4rem;
-    }
-    
-    .social_icons {
-        margin-right: 0.7rem;
-    
-        svg {
-            width: 1.5rem;
-            height: 1.5rem;
-        }
-    }
-
-}
-
-@include md (desktop) {
-    .nav-container {
-        justify-content: flex-start;
-    }
+.nav-color {
+    background: #000;
+    position: absolute;
+    z-index: 2;
+    overflow: hidden;
 }

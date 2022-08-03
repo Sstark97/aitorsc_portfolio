@@ -3,7 +3,7 @@ import SocialNetworks from "@components/SocialNetworks";
 import Banner from "./Banner";
 import { RouteNav } from "../types";
 import { ROUTES } from "../const";
-import "@styles/nav.scss";
+import "@styles/components/desktop_nav.scss";
 
 const NavBar = () => {
   const { pathname } = useLocation();

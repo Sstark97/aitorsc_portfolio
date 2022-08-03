@@ -1,22 +1,20 @@
-import {
-    BrowserRouter,
-    Routes,
-    Route,
-  } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "@containers/Layout";
-
 import Home from "@pages/Home";
 import Skills from "@pages/Skills";
+import { AppProvider } from "@containers/AppProvider";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/skills" element={<Skills />}/>
-        </Routes>
-      </Layout>
+      <AppProvider>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/skills" element={<Skills />} />
+          </Routes>
+        </Layout>
+      </AppProvider>
     </BrowserRouter>
   );
 };

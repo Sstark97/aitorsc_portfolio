@@ -1,6 +1,6 @@
 import { SOCIAL_ROUTES } from "../const";
 import { SocialRoutes } from "../types";
-import "@styles/nav.scss";
+import "@styles/containers/nav.scss";
 
 const SocialNetWorks = () => (
     <div id="social_container">

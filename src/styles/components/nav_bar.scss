@@ -1,0 +1,86 @@
+@import "@styles/var.scss";
+
+#hamburger_check:checked ~ .hamburger_nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 0;
+    z-index: 4;
+    width: 100vw;
+    height: 88vh;
+    background-color: $background;
+
+    div {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        border-bottom: 1px solid #282828;
+        padding: 1rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: #909096;
+    }
+
+    #first_element {
+        border-top: 1px solid #282828;
+        margin-top: 1.8rem;
+    }
+
+    .link_focus {
+        color: $primary;
+    }
+
+    .banner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0.2rem;
+        background: #000;
+        margin-bottom: 2.3rem;
+
+        div {
+            border-bottom: none;
+            padding: 0;
+        }
+
+        .banner_logo {
+            font-size: 3.8rem;
+        }
+
+        .banner_name {
+            font-size: 1.7rem;
+            padding-bottom: 0.9rem;
+        }
+
+        .banner_ocuppation {
+            font-size: 0.9rem;
+            padding-bottom: 0.9rem;
+            color: #a5a5a5;
+        }
+    }
+
+    #social_container {
+        border-bottom: none;
+        position: absolute;
+        bottom: 1rem;
+        padding: 0;
+    }
+    
+    .social_icons {
+        margin-right: 0.7rem;
+    
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+
+}
+
+#hamburger_check:checked header {
+    background: #000;
+}
