@@ -62,7 +62,7 @@
 
             a {
                 text-decoration: none;
-                color: #909096;
+                color: $secondary;
             }
         
             #first_element {
@@ -71,7 +71,7 @@
             }
         
             .link_focus {
-                color: red;
+                color: $primary;
             }
         
             .banner {
@@ -124,4 +124,7 @@
 
 .nav-color {
     background: #000;
+    position: absolute;
+    z-index: 2;
+    overflow: hidden;
 }

@@ -1,4 +1,10 @@
 @import '@styles/var.scss';
+@import '@styles/mixins.scss';
+
+.presentation_container {
+  padding: 1rem 2rem 0 2rem;
+  height: 95%;
+}
 
 .presentation_header {
   display: flex;
@@ -8,12 +14,14 @@
   font-weight: bold;
   padding-top: 3.5rem;
 
-  p {
-    display: inline-block;
-  }
 }
 
-.presentation, .presentation_btn {
+.presentation {
+  color: $secondary;
+}
+
+.presentation,
+.presentation_btn {
   margin-top: 2rem;
   animation: animated-presentation 4s steps(30, end) 7s 1 normal both;
 }
@@ -22,8 +30,7 @@
   background: none;
   border: 1px solid $primary;
   color: $primary;
-  margin-top: 2rem;
-  padding: 1rem 2rem 1rem 2rem;
+  padding: 1rem 3rem 1rem 3rem;
   font-size: 1rem;
 }
 
@@ -34,7 +41,7 @@
   width: min-content;
   white-space: nowrap;
   overflow: hidden;
-  margin: 0;
+  margin: -0.2rem;
   font-size: 2rem;
   font-weight: bold;
 }
@@ -111,5 +118,66 @@
 
   to {
     opacity: 1;
+  }
+}
+
+@include md(desktop) {
+
+  .presentation_container {
+    padding: 2rem 3rem 0 4.5rem;
+    height: 95%;
+    font-weight: 400;
+  }
+
+  .presentation_header {
+    padding-top: 7.5rem;
+  }
+
+  .presentation {
+    font-size: 1.1rem;
+  }
+
+  .presentation_btn {
+    margin-top: 3.5rem;
+  }
+
+  .line__1,
+  .line__2,
+  .line__3 {
+    font-size: 4rem;
+  }
+
+  .presentation {
+    max-width: 75ch;
+  }
+
+  @keyframes animated-text__1 {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 9.5rem;
+    }
+  }
+
+  @keyframes animated-text__2 {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 17.2rem;
+    }
+  }
+
+  @keyframes animated-text__3 {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 42.2rem;
+    }
   }
 }

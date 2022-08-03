@@ -30,6 +30,10 @@ p {
     background: #000;
   }
 
+  main {
+    min-height: 90%;
+  }
+
 }
 
 @include md(desktop) {
@@ -37,8 +41,14 @@ p {
     flex-direction: row;
 
     header {
+      position: fixed;
       min-width: 10%;
       background: #181818;
+    }
+
+    main {
+      min-width: 90%;
+      margin-left: 10%;
     }
   }
 
