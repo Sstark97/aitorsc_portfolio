@@ -9,6 +9,12 @@ export interface NavBarProps {
     handleClickHamburger():void
 }
 
+export interface SkillBarProps {
+    name: string,
+    level: number,
+    color: string
+}
+
 // Objects
 export interface RouteNav {
     route: string;

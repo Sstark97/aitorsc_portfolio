@@ -2,8 +2,13 @@
 @import '@styles/animation.scss';
 @import '@styles/mixins.scss';
 
+.skills_header {
+  padding-top: 2vh;
+}
+
 .skills_presentation {
     margin-top: 2rem;
+    margin-bottom: 10.5vh;
 }
 
 .skills_line__1,
@@ -20,17 +25,17 @@
 .skills_line__1 {
   border-right: 2px solid $background;
 
-  animation: animated-text__1 2.2s steps(30, end) 1s 1 normal both,
-    animated-cursor 450ms steps(30, end) 8;
+  animation: animated-text__1 1.2s steps(30, end) 1s 1 normal both,
+    animated-cursor 250ms steps(30, end) 8;
 }
 
 .skills_line__2 {
   border-right: 2px solid $background;
 
-  animation: animated-text__2 2s steps(30, end) 1s 1 normal both,
-    animated-cursor 2950ms steps(30, end);
-  -webkit-animation-delay: 2.5s;
-  animation-delay: 3.5s;
+  animation: animated-text__2 1.2s steps(30, end) 2s 1 normal both,
+    animated-cursor 1450ms steps(30, end);
+  -webkit-animation-delay: 1.5s;
+  animation-delay: 2.5s;
 }
 
 @keyframes animated-cursor {

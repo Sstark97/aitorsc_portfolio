@@ -18,7 +18,7 @@ const SkillsPresentation = () => {
 
   return (
     <>
-      <div>
+      <div className="skills_header">
         <p className="skills_line__1">{"Habilidades &"}</p>
         <p className="skills_line__2">Experiencia</p>
       </div>
@@ -40,6 +40,10 @@ const SkillsPresentation = () => {
           ago, I’ve done remote work for agencies, consulted for startups, and
           collaborated with talented people to create web products for both
           business and consumer use.
+        </p>
+        <p>
+          Since beginning my journey as a freelance developer nearly 10 years
+          ago, I’ve done remote work for agencies, consulted for startups.
         </p>
       </div>
     </>
