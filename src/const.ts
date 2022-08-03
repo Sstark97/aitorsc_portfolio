@@ -7,6 +7,7 @@ export const ROUTES: RouteNav[] = [
     { route: "/skills", route_name: "Mis Skills" },
     { route: "/work", route_name: "Experiencia Laboral" },
     { route: "/projects", route_name: "Proyectos" },
+    { route: "/contact", route_name: "Contacto" },
 ];
 
 export const SOCIAL_ROUTES: SocialRoutes[] = [
