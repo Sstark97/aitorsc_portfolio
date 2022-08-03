@@ -7,6 +7,7 @@
     justify-content: flex-end;
     align-items: flex-end;
     min-height: 100%;
+    background: $background;
 
     .hamburger_nav {
         display: none;
@@ -118,4 +119,8 @@
         }
 
     }
+}
+
+.nav-color {
+    background: #000;
 }

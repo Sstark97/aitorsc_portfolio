@@ -13,7 +13,7 @@ const Nav = () => {
   };
 
   return (
-    <div className="nav-container">
+    <div className={isOpen ? "nav-container nav-color" : "nav-container"}>
       <input
         type="checkbox"
         name="hamburger_check"

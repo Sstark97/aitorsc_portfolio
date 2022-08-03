@@ -21,9 +21,10 @@ const HomePresentation = () => {
       <div className="presentation_header">
         <p className="line__1">Hola, </p>
         <p className="line__2">soy { name },</p>
-        <p className="line__3">desarrollador Full Stack</p>
+        <p className="line__3">Desarrollador Full Stack</p>
       </div>
       <div className="presentation">{ presentation }</div>
+      <button className="presentation_btn">Contáctame</button>
     </div>
   );
 };

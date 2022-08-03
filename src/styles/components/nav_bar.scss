@@ -30,7 +30,7 @@
     }
 
     .link_focus {
-        color: red;
+        color: $primary;
     }
 
     .banner {
@@ -78,4 +78,8 @@
         }
     }
 
+}
+
+#hamburger_check:checked header {
+    background: #000;
 }
