@@ -9,12 +9,12 @@ const SkillsContainer = () => (
     <SkillsPresentation />
     <div className="skills_data_container">
       <DataList
-        Component={SkillBar}
+        MyComponent={SkillBar}
         props={["name", "level"]}
         endPoint="skills"
       />
       <DataList
-        Component={ExperienceCard}
+        MyComponent={ExperienceCard}
         props={[
           "position",
           "company",

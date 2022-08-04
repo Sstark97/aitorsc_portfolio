@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import api from "@api/index";
 import { SKILLS_COLORS } from "../const";
-import { Skill } from "../types";
+import { DataProps, Skill, Experience } from "../types";
 import "@styles/components/data_list.scss";
+import { AxiosResponse } from "axios";
 
-const DataList = ({ Component, props, endPoint }: any) => {
-  const [data, setData] = useState<Skill[]>([]);
+const DataList = ({ MyComponent, props, endPoint }: DataProps) => {
+  const [data, setData] = useState<Skill[] | Experience[]>([]);
 
   useEffect(() => {
     const loadSkills = async () => {
-      const apiData = await api.get(endPoint);
-      console.log(apiData);
+      const apiData: AxiosResponse<Skill[] | Experience[]> = await api.get(endPoint);
       setData(apiData.data);
     };
 
@@ -21,10 +21,10 @@ const DataList = ({ Component, props, endPoint }: any) => {
     <ul>
       {data.map((portfolioData, index) => (
         <li key={index}>
-          {portfolioData.level !== undefined ? (
-            <Component {...props = {...portfolioData}} color={SKILLS_COLORS[index]} />
+          { "level" in (portfolioData as Skill) ? (
+            <MyComponent {...props = {...portfolioData}} color={SKILLS_COLORS[index]} />
           ) : (
-            <Component {...props = {...portfolioData}} />
+            <MyComponent {...props = {...portfolioData}} />
           )}
         </li>
       ))}

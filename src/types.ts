@@ -15,6 +15,12 @@ export interface SkillBarProps {
     color: string
 }
 
+export interface DataProps {
+    MyComponent: new() => React.Component<any, any>,
+    props: Skill | Experience,
+    endPoint: string
+}
+
 // Objects
 export interface RouteNav {
     route: string;
