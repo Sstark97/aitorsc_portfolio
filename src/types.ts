@@ -33,7 +33,9 @@ export interface Portfolio {
     phone: string,
     presentation: string,
     surname: string,
-}
+};
+
+export interface Skill extends Required<Pick<SkillBarProps, 'name' | 'level'>> {}
 
 // Context
 export interface AppState {
