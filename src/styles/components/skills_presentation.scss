@@ -10,6 +10,11 @@
     margin-top: 2rem;
     margin-bottom: 8.5vh;
     animation: skills-animated-presentation 1s steps(30, end) 1s 1 normal both;
+
+    a {
+      text-decoration: none;
+      color: $primary;
+    }
 }
 
 .skills_line__1,

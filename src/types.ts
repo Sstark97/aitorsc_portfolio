@@ -37,6 +37,15 @@ export interface Portfolio {
 
 export interface Skill extends Required<Pick<SkillBarProps, 'name' | 'level'>> {}
 
+export interface Experience {
+    position: string,
+    company: string,
+    description: string,
+    start_date: string,
+    final_date?: string,
+    current?: boolean,
+}
+
 // Context
 export interface AppState {
     portFolio: Portfolio,

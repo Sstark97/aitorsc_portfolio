@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import api from "@api/index";
 import { SKILLS_COLORS } from "../const";
 import { Skill } from "../types";
-import "@styles/components/skills_list.scss";
+import "@styles/components/data_list.scss";
 
 const DataList = ({ Component, props, endPoint }: any) => {
   const [data, setData] = useState<Skill[]>([]);
@@ -10,6 +10,7 @@ const DataList = ({ Component, props, endPoint }: any) => {
   useEffect(() => {
     const loadSkills = async () => {
       const apiData = await api.get(endPoint);
+      console.log(apiData);
       setData(apiData.data);
     };
 
