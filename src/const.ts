@@ -21,4 +21,4 @@ export const SOCIAL_ROUTES: SocialRoutes[] = [
   },
 ];
 
-export const SKILLS_COLORS: string[] = ["#FFFF00", "#61DBFB"];
+export const SKILLS_COLORS: string[] = ["#FFFF00", "#61DBFB", "#3E5F8A", "#764abc"];
