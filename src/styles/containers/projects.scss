@@ -1,2 +1,17 @@
 @import '@styles/mixins.scss';
 @import '@styles/var.scss';
+
+.projects  {
+    animation: projects-animated-presentation 1s steps(30, end) 1s 1 normal both;
+}
+
+@keyframes projects-animated-presentation {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  

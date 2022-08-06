@@ -52,6 +52,14 @@ export interface Experience {
     current?: boolean,
 }
 
+export interface Project {
+    name: string,
+    description: string,
+    repository: string,
+    image?: string,
+    web?: string,
+}
+
 // Context
 export interface AppState {
     portFolio: Portfolio,

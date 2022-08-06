@@ -1,0 +1,43 @@
+@import '@styles/var.scss';
+@import '@styles/animation.scss';
+@import '@styles/mixins.scss';
+
+.projects_header {
+  padding-top: 2vh;
+  margin-bottom: 2rem;
+}
+
+.projects__line {
+  width: min-content;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: -0.2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: $primary;
+
+  border-right: 2px solid $background;
+
+  animation: projects-animated-text__1 1s steps(30, end) 1s 1 normal both,
+    projects-animated-cursor 250ms steps(30, end) 8;
+}
+
+@keyframes projects-animated-cursor {
+  from {
+    border-right-color: $background;
+  }
+
+  to {
+    border-right-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+@keyframes projects-animated-text__1 {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 8.7rem;
+  }
+}
