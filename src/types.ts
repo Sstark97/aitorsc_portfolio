@@ -9,6 +9,18 @@ export interface NavBarProps {
     handleClickHamburger():void
 }
 
+export interface SkillBarProps {
+    name: string,
+    level: number,
+    color: string
+}
+
+export interface DataProps {
+    MyComponent: new() => React.Component<any, any>,
+    props: Skill | Experience,
+    endPoint: string
+}
+
 // Objects
 export interface RouteNav {
     route: string;
@@ -27,6 +39,17 @@ export interface Portfolio {
     phone: string,
     presentation: string,
     surname: string,
+};
+
+export interface Skill extends Required<Pick<SkillBarProps, 'name' | 'level'>> {}
+
+export interface Experience {
+    position: string,
+    company: string,
+    description: string,
+    start_date: string,
+    final_date?: string,
+    current?: boolean,
 }
 
 // Context

@@ -1,0 +1,16 @@
+@import '@styles/var.scss';
+@import '@styles/animation.scss';
+@import '@styles/mixins.scss';
+
+.experience_container {
+    background: $fourth;
+    padding: 1.5rem;
+
+    h3 {
+        margin-top: 0.4rem;
+    }
+}
+
+#company {
+    margin:0;
+}

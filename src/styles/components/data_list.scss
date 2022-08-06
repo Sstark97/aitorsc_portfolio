@@ -1,0 +1,14 @@
+@import '@styles/var.scss';
+@import '@styles/animation.scss';
+@import '@styles/mixins.scss';
+
+ul {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 2rem;
+    list-style: none;
+}
+
+li {
+    margin-top: 1rem;
+}

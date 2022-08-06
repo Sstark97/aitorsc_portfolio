@@ -1,0 +1,128 @@
+@import '@styles/var.scss';
+@import '@styles/animation.scss';
+@import '@styles/mixins.scss';
+
+.skills_header {
+  padding-top: 2vh;
+}
+
+.skills_presentation {
+  margin-top: 2rem;
+  margin-bottom: 8.5vh;
+  animation: skills-animated-presentation 1s steps(30, end) 1s 1 normal both;
+
+  a {
+    text-decoration: none;
+    color: $primary;
+  }
+}
+
+.skills_data_container {
+  margin-top: 2rem;
+
+  ul {
+    padding-top: 2vh;
+  }
+}
+
+.skills_line__1,
+.skills_line__2 {
+  width: min-content;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: -0.2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: $primary;
+}
+
+.skills_line__1 {
+  border-right: 2px solid $background;
+
+  animation: skills-animated-text__1 1s steps(30, end) 1s 1 normal both,
+    skills-animated-cursor 250ms steps(30, end) 8;
+}
+
+.skills_line__2 {
+  border-right: 2px solid $background;
+
+  animation: skills-animated-text__2 1s steps(30, end) 2s 1 normal both,
+    skills-animated-cursor 1450ms steps(30, end);
+  -webkit-animation-delay: 1.5s;
+  animation-delay: 2.5s;
+}
+
+@keyframes skills-animated-cursor {
+  from {
+    border-right-color: $background;
+  }
+
+  to {
+    border-right-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+@keyframes skills-animated-text__1 {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 12rem;
+  }
+}
+
+@keyframes skills-animated-text__2 {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 10.3rem;
+  }
+}
+
+@keyframes skills-animated-presentation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@include md(desktop) {
+  #first_skill_p {
+    margin-top: 3rem;
+  }
+
+  .skills_data_container {
+    width: 30%;
+  }
+
+  .skills_line__1,
+  .skills_line__2 {
+    font-size: 3.5rem;
+  }
+
+  @keyframes skills-animated-text__1 {
+    from {
+      width: 0;
+    }
+  
+    to {
+      width: 21rem;
+    }
+  }
+  
+  @keyframes skills-animated-text__2 {
+    from {
+      width: 0;
+    }
+  
+    to {
+      width: 20.3rem;
+    }
+  }
+}

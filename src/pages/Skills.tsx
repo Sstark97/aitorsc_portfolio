@@ -1,7 +1,5 @@
-const Skills = () => (
-    <div className="skills">
-      <p>Portfolio Skills!</p>
-    </div>
-)
+import SkillsContainer from "@containers/SkillsContainer";
 
-export default Skills
+const Skills = () => <SkillsContainer />;
+
+export default Skills;
