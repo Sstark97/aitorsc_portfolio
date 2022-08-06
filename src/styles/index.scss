@@ -48,6 +48,8 @@ p {
     }
 
     main {
+      display: flex;
+      justify-content: center;
       min-width: 90%;
       margin-left: 10%;
       padding: 0;

@@ -18,7 +18,8 @@ export interface SkillBarProps {
 export interface DataProps {
     MyComponent: new() => React.Component<any, any>,
     props: Skill | Experience,
-    endPoint: string
+    endPoint: string,
+    column?: boolean
 }
 
 // Objects

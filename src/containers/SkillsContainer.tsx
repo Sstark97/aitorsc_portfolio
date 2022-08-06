@@ -12,6 +12,7 @@ const SkillsContainer = () => (
         MyComponent={SkillBar}
         props={["name", "level"]}
         endPoint="skills"
+        column
       />
       <DataList
         MyComponent={ExperienceCard}
