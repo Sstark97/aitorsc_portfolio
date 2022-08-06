@@ -18,7 +18,7 @@ const DataList = ({ MyComponent, props, endPoint, column }: DataProps) => {
   }, [data]);
   
   return (
-    <ul style={{ flexDirection: column ? "column": "row"}}>
+    <ul className={column ? "column_data" : ""}>
       {data.map((portfolioData, index) => (
         <li key={index}>
           { "level" in (portfolioData as Skill) ? (

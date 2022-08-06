@@ -15,10 +15,30 @@ li {
     margin-top: 1rem;
 }
 
+.column_data {
+    flex-direction: column;
+}
+
 @include md (desktop) {
     ul {
         flex-direction: row;
         flex-wrap: wrap;
+        flex: 4;
+        row-gap: 1rem;
+        column-gap: 1rem;
+        width: 100%;
+    }
+
+    li {
+        width: auto;
+        flex-grow: 1;
+    }
+}
+
+@include md (tablet) {
+    ul {
+        flex-direction: row;
+        flex-wrap: nowrap;
         flex: 4;
         row-gap: 1rem;
         column-gap: 1rem;
