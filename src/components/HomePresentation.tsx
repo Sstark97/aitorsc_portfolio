@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useGlobalContext } from "@containers/AppProvider";
+import SocialNetworks from "@components/SocialNetworks";
 import { AppState } from "../types";
 import "@styles/components/home_presentation.scss";
 
@@ -23,7 +24,10 @@ const HomePresentation = () => {
         <p className="line__2">soy { name },</p>
         <p className="line__3">Desarrollador Full Stack</p>
       </div>
-      <div className="presentation">{ presentation }</div>
+      <div className="presentation">
+        { presentation }
+        <SocialNetworks />
+      </div>
       <button className="presentation_btn">Contáctame</button>
     </div>
   );

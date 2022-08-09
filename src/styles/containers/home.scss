@@ -11,4 +11,23 @@
     .home_container {
         margin-left: 6rem;
     }
+
+    #social_container {
+        margin-top: 1rem;
+        border-bottom: none;
+        padding: 0;
+
+        a {
+            color: $secondary;
+        }
+    }
+    
+    .social_icons {
+        margin-right: 0.7rem;
+    
+        svg {
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+    }
 }
