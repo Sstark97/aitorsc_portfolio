@@ -1,5 +1,5 @@
 import ProjectsPresentation from "@components/ProjectsPresentation"
-import ProjectCard from "@components/ProjectCard";
+import ProjectCard from "@containers/ProjectCard";
 import DataList from "@components/DataList";
 import "@styles/containers/projects.scss";
 

@@ -22,6 +22,10 @@ export interface DataProps {
     column?: boolean
 }
 
+export interface ExpandedIconProps {
+    handleClickExpanded ():void;
+}
+
 // Objects
 export interface RouteNav {
     route: string;
