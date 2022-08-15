@@ -6,7 +6,7 @@ import "@styles/components/contact_form.scss";
 const ContactForm = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [error, setError] = useState<boolean>(false);
-  const [success, setSuccess] = useState<boolean>(true);
+  const [success, setSuccess] = useState<boolean>(false);
 
   useEffect(() => {
     setTimeout(() => {
