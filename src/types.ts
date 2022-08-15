@@ -65,6 +65,17 @@ export interface Project {
     web?: string,
 }
 
+export interface ContactFormInterface {
+    name: string,
+    email: string,
+    subject: string,
+    message: string,
+}
+
+export interface ContactFormElement extends Element {
+    value?: string | undefined;
+}
+
 // Context
 export interface AppState {
     portFolio: Portfolio,
