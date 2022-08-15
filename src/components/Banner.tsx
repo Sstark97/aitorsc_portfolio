@@ -15,7 +15,6 @@ const Banner = () => {
 
   return (
     <div className="banner">
-      <div className="banner_logo">A</div>
       <div className="banner_name"> { name } </div>
       <div className="banner_ocuppation">Full Stack Developer</div>
     </div>

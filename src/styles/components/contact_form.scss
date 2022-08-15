@@ -1,0 +1,135 @@
+@import '@styles/var.scss';
+@import '@styles/mixins.scss';
+
+fieldset {
+    width: 100%;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.form_container{
+    width: 100%;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.edit_input, .textarea_input{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.edit_input input, 
+.textarea_input textarea {
+    width: 90%;
+    border: solid 1.5px $primary;
+    border-radius: 1rem;
+    background: none;
+    padding: 1rem;
+    font-size: 1rem;
+    color: $secondary;
+    transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+    opacity: 0.8;
+
+    overflow: hidden;
+}
+
+.edit_input label,  
+.textarea_input label {
+    position: absolute;
+    color: $secondary;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4,0,0.2,1);
+}
+
+.edit_input input:focus, .edit_input input:valid,
+.textarea_input textarea:focus, .textarea_input textarea:valid {
+    outline: none;
+    border: 1.5px solid $primary;
+}
+
+.edit_input input:focus ~ label,
+.textarea_input textarea:focus ~ label{
+    transform: translateY(-50%) scale(0.8);
+    background-color: $background;
+    padding: 0 .2em;
+    color: $primary;
+}
+
+textarea {
+    resize: none;
+    width: 60%;
+    height: 20vh;
+}
+
+.input input:focus, .edit_input input:focus{
+    outline: none;
+    opacity: 1;
+}
+
+.button{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.button button{
+    background: none;
+    border: 1px solid $primary;
+    color: $primary;
+    padding: 1rem 3rem 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.button button:hover {
+    color: #fff;
+    background: $hover_btn;
+    cursor: pointer;
+}
+
+.form_success {
+    position: absolute;
+    z-index: 8;
+    bottom: 1rem;
+    left: 2.1rem;
+    border: 1px solid $primary;
+    padding: 1rem;
+    background: $background;
+    width: 75vw;
+    text-align: center;
+    animation: form_success 3s 1;
+    opacity: 0;
+}
+
+@keyframes form_success  {
+    0% { opacity: 0;}
+    50% { opacity:  1;}
+    100% { opacity: 0;}
+}
+
+@include md (tablet) {
+    .form_success {
+        bottom: 3.6rem;
+        left: 4.8rem;
+        font-size: 0.8rem;
+        width: auto;
+    }
+}
+
+@include md (desktop) {
+    .form_success {
+        bottom: 2rem;
+        left: 4.8rem;
+        font-size: 1rem;
+    }
+}

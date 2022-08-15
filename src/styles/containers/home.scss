@@ -1,33 +1,44 @@
 @import '@styles/var.scss';
 @import '@styles/mixins.scss';
 
-
 .home_container {
-    height: 100%;
     width: 100%;
+}
+
+#social_container {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    margin-top: 1rem;
+    border-bottom: none;
+    padding: 0;
+
+    a {
+        color: $secondary;
+        width: 20%;
+    }
 }
 
 @include md(desktop) {
     .home_container {
         margin-left: 6rem;
+        margin-top: 2rem;
     }
 
-    #social_container {
-        margin-top: 1rem;
-        border-bottom: none;
-        padding: 0;
-
-        a {
-            color: $secondary;
-        }
+    #social_container { 
+        justify-content: flex-start;
     }
     
     .social_icons {
-        margin-right: 0.7rem;
     
         svg {
             width: 1.2rem;
             height: 1.2rem;
+        }
+
+        svg:hover {
+            cursor: pointer;
+            color: $primary;
         }
     }
 }
