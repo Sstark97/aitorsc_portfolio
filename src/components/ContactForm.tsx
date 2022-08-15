@@ -1,10 +1,20 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { ContactFormInterface, ContactFormElement } from "../types";
+import api from "../api";
 import "@styles/components/contact_form.scss";
 
 const ContactForm = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
-  const handleSubmit = (e: any) => {
+  const [error, setError] = useState<boolean>(false);
+  const [success, setSuccess] = useState<boolean>(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setSuccess(false);
+    }, 3000);
+  }, [error, success]);
+
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     let formResponse: ContactFormInterface = {} as ContactFormInterface;
 
@@ -14,33 +24,42 @@ const ContactForm = () => {
       [...formElements].map((element: ContactFormElement) => {
         if (element.id && element.value) {
           formResponse[element.id as keyof typeof formResponse] = element.value;
+          element.value = "";
         }
       });
 
-      console.log(formResponse);
+      const response = await api.post("contact", formResponse);
+      console.log(response);
+      if (response.status === 400) {
+        setError(true);
+      } else {
+        setError(false);
+        setSuccess(true);
+      }
     }
   };
 
   return (
     <form className="form_container" ref={formRef} onSubmit={handleSubmit}>
+      {success && <div className="form_success">¡Gracias por contactarme!</div>}
       <fieldset>
         <div className="edit_input">
-          <input type="text" id="name" required/>
+          <input type="text" id="name" required />
           <label htmlFor="name">Nombre</label>
         </div>
 
         <div className="edit_input">
-          <input type="email" id="email" required/>
+          <input type="email" id="email" required />
           <label htmlFor="email">Email</label>
         </div>
 
         <div className="edit_input">
-          <input type="text" id="subject" required/>
+          <input type="text" id="subject" required />
           <label htmlFor="subject">Asunto</label>
         </div>
 
         <div className="textarea_input">
-          <textarea id="message" required/>
+          <textarea id="message" required />
           <label htmlFor="message">Mensaje</label>
         </div>
 
