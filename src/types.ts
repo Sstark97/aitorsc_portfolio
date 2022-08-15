@@ -18,7 +18,12 @@ export interface SkillBarProps {
 export interface DataProps {
     MyComponent: new() => React.Component<any, any>,
     props: Skill | Experience,
-    endPoint: string
+    endPoint: string,
+    column?: boolean
+}
+
+export interface ExpandedIconProps {
+    handleClickExpanded ():void;
 }
 
 // Objects
@@ -50,6 +55,14 @@ export interface Experience {
     start_date: string,
     final_date?: string,
     current?: boolean,
+}
+
+export interface Project {
+    name: string,
+    description: string,
+    repository: string,
+    image?: string,
+    web?: string,
 }
 
 // Context

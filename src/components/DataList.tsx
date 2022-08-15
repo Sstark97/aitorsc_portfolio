@@ -5,7 +5,7 @@ import { DataProps, Skill, Experience } from "../types";
 import "@styles/components/data_list.scss";
 import { AxiosResponse } from "axios";
 
-const DataList = ({ MyComponent, props, endPoint }: DataProps) => {
+const DataList = ({ MyComponent, props, endPoint, column }: DataProps) => {
   const [data, setData] = useState<Skill[] | Experience[]>([]);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const DataList = ({ MyComponent, props, endPoint }: DataProps) => {
   }, [data]);
   
   return (
-    <ul>
+    <ul className={column ? "column_data" : ""}>
       {data.map((portfolioData, index) => (
         <li key={index}>
           { "level" in (portfolioData as Skill) ? (

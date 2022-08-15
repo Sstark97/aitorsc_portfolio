@@ -3,6 +3,8 @@
 @import '@styles/mixins.scss';
 
 ul {
+    display: flex;
+    flex-direction: column;
     margin: 0;
     padding: 0;
     padding-bottom: 2rem;
@@ -11,4 +13,40 @@ ul {
 
 li {
     margin-top: 1rem;
+}
+
+.column_data {
+    flex-direction: column;
+}
+
+@include md (tablet) {
+    ul {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        flex: 4;
+        row-gap: 1rem;
+        column-gap: 1rem;
+        width: 100%;
+    }
+
+    li {
+        width: auto;
+        flex-grow: 1;
+    }
+}
+
+@include md (desktop) {
+    ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex: 4;
+        row-gap: 1rem;
+        column-gap: 1rem;
+        width: 100%;
+    }
+
+    li {
+        width: auto;
+        flex-grow: 1;
+    }
 }
