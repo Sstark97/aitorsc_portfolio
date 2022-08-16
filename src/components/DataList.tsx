@@ -1,21 +1,22 @@
-import { useState, useEffect } from "react";
-import api from "@api/index";
+import { useEffect, useState } from "react";
+import { useGlobalContext } from "@containers/AppProvider";
 import { SKILLS_COLORS } from "../const";
-import { DataProps, Skill, Experience } from "../types";
+import { DataProps, AppState, Skill, Experience, Project, DataSelect } from "../types";
 import "@styles/components/data_list.scss";
-import { AxiosResponse } from "axios";
 
 const DataList = ({ MyComponent, props, endPoint, column }: DataProps) => {
-  const [data, setData] = useState<Skill[] | Experience[]>([]);
+  const { skillData, experienceData, projectsData }: AppState = useGlobalContext();
+  const [data, setData] = useState<Skill[] | Experience[] | Project[]>([]);
+
+  const mySelect: DataSelect = {
+    "skills": skillData,
+    "work": experienceData,
+    "projects": projectsData,
+  }
 
   useEffect(() => {
-    const loadSkills = async () => {
-      const apiData: AxiosResponse<Skill[] | Experience[]> = await api.get(endPoint);
-      setData(apiData.data);
-    };
-
-    loadSkills();
-  }, [data]);
+    setData(mySelect[endPoint]);
+  }, [data, endPoint, skillData, experienceData, projectsData]);
   
   return (
     <ul className={column ? "column_data" : ""}>

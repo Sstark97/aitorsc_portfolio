@@ -17,7 +17,7 @@ export interface SkillBarProps {
 
 export interface DataProps {
     MyComponent: new() => React.Component<any, any>,
-    props: Skill | Experience,
+    props: Skill | Experience | Project,
     endPoint: string,
     column?: boolean
 }
@@ -76,8 +76,16 @@ export interface ContactFormElement extends Element {
     value?: string | undefined;
 }
 
+export interface DataSelect {
+    [key: string]: Experience[] | Project[] | Skill[]
+}
+
 // Context
 export interface AppState {
     portFolio: Portfolio,
-    loadPortfolio():void
+    skillData: Skill [],
+    experienceData: Experience [],
+    projectsData: Project [],
+    loadPortfolio():void,
+    loadData(endPoint: string):void,
 }
