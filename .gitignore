@@ -25,3 +25,8 @@ dist-ssr
 
 # Enviroment variables
 .env
+
+#Build Folder
+/build
+build/
+build/*
