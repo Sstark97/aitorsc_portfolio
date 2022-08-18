@@ -3,7 +3,6 @@ import SkillsContainer from "@containers/SkillsContainer";
 
 const Skills = () => (
   <>
-      {""}
     <Helmet>
       <title>ASC | Habilidades</title>
       <meta name="title" content="ASC | Habilidades" />

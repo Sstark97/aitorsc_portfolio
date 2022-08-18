@@ -3,7 +3,6 @@ import ProjectsContainer from "@containers/ProjectsContainer";
 
 const Projects = () => (
   <>
-      {""}
     <Helmet>
       <title>ASC | Proyectos</title>
       <meta name="title" content="ASC | Proyectos" />

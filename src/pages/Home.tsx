@@ -3,7 +3,6 @@ import HomeContainer from "@containers/HomeContainer";
 
 const Home = () => (
   <>
-      {""}
     <Helmet>
       <title>ASC | Full Stack Developer</title>
       <meta name="title" content="ASC | Full Stack Developer" />

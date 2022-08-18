@@ -3,7 +3,6 @@ import ContactContainer from "@containers/ContactContainer";
 
 const Contact = () => 
 <>
-{""}
 <Helmet>
     <title>ASC | Contacto</title>
     <meta name="title" content="ASC | Contacto" />
