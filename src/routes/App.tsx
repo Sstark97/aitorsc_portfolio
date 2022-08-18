@@ -6,46 +6,20 @@ import { AppProvider } from "@containers/AppProvider";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <AppProvider>
-        <Layout>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Suspense fallback={<LoadingSpinner />}>
-                  <Home />
-                </Suspense>
-              }
-            />
-            <Route
-              path="/skills"
-              element={
-                <Suspense fallback={<LoadingSpinner />}>
-                  <Skills />
-                </Suspense>
-              }
-            />
-            <Route
-              path="/projects"
-              element={
-                <Suspense fallback={<LoadingSpinner />}>
-                  <Projects />
-                </Suspense>
-              }
-            />
-            <Route
-              path="/contact"
-              element={
-                <Suspense fallback={<LoadingSpinner />}>
-                  <Contact />
-                </Suspense>
-              }
-            />
-          </Routes>
-        </Layout>
-      </AppProvider>
-    </BrowserRouter>
+    <Suspense fallback={<LoadingSpinner />}>
+      <BrowserRouter>
+        <AppProvider>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/skills" element={<Skills />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </Layout>
+        </AppProvider>
+      </BrowserRouter>
+    </Suspense>
   );
 };
 
@@ -55,4 +29,3 @@ const Projects = lazy(() => import("@pages/Projects"));
 const Skills = lazy(() => import("@pages/Skills"));
 
 export default App;
-

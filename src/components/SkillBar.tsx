@@ -19,12 +19,12 @@ const SkillBar = ({ name, level, color}: SkillBarProps) => {
 
 
   return (
-    <div>
+    <>
       <span>{ name }</span>
       <div className="skill_bar_container">
         <div className="skill_point" style={{ width: width, background: color }}></div>
       </div>
-    </div>
+    </>
   );
 };
 
