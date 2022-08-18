@@ -1,5 +1,6 @@
 import { defineConfig, loadEnv, splitVendorChunkPlugin } from 'vite'
 import react from '@vitejs/plugin-react'
+import viteCompression from 'vite-plugin-compression';
 import { resolve } from 'path'
 
 const getAlliases = () => {
@@ -21,7 +22,7 @@ export default defineConfig(({ command, mode }) => {
   if (command === 'serve' && mode === 'development') {
     return {
 
-      plugins: [react()],
+      plugins: [react(), viteCompression()],
       resolve: {
         alias: getAlliases(),
       },
@@ -33,7 +34,7 @@ export default defineConfig(({ command, mode }) => {
 
     return {
  
-      plugins: [react(), splitVendorChunkPlugin()],
+      plugins: [react(), splitVendorChunkPlugin(), viteCompression()],
       build: {
         outDir: 'build',
         chunkSizeWarningLimit: 1000,

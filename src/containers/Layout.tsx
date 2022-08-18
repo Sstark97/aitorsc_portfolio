@@ -1,10 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, memo } from "react";
 import { ChildrenProps } from "../types";
 import { useGlobalContext } from "@containers/AppProvider";
 import Nav from "./Nav";
 import "@styles/index.scss";
 
-const Layout = ({ children }: ChildrenProps) => {
+const Layout = memo(({ children }: ChildrenProps) => {
   const { loadPortfolio } = useGlobalContext();
 
   useEffect(() => {
@@ -20,6 +20,6 @@ const Layout = ({ children }: ChildrenProps) => {
       <main>{children}</main>
     </div>
   );
-};
+});
 
 export default Layout;

@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, memo} from 'react';
 import { SkillBarProps } from "../types";
 import "@styles/components/skill_bar.scss";
 
-const SkillBar = ({ name, level, color}: SkillBarProps) => {
+const SkillBar = memo(({ name, level, color}: SkillBarProps) => {
     const [width, setWidth ] = useState("0%");
 
     useEffect(() => {
@@ -19,13 +19,13 @@ const SkillBar = ({ name, level, color}: SkillBarProps) => {
 
 
   return (
-    <div>
+    <>
       <span>{ name }</span>
       <div className="skill_bar_container">
         <div className="skill_point" style={{ width: width, background: color }}></div>
       </div>
-    </div>
+    </>
   );
-};
+});
 
 export default SkillBar;

@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo} from "react";
 import { useGlobalContext } from "@containers/AppProvider";
 import { SKILLS_COLORS } from "../const";
 import { DataProps, AppState, Skill, Experience, Project, DataSelect } from "../types";
 import "@styles/components/data_list.scss";
 
-const DataList = ({ MyComponent, props, endPoint, column }: DataProps) => {
+const DataList = memo(({ MyComponent, props, endPoint, column }: DataProps) => {
   const { skillData, experienceData, projectsData }: AppState = useGlobalContext();
   const [data, setData] = useState<Skill[] | Experience[] | Project[]>([]);
 
@@ -31,6 +31,6 @@ const DataList = ({ MyComponent, props, endPoint, column }: DataProps) => {
       ))}
     </ul>
   );
-};
+});
 
 export default DataList;
