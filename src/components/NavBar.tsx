@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { Link, useLocation } from "react-router-dom";
-import SocialNetworks from "@components/SocialNetworks";
+import SocialNetworks from "./SocialNetWorks";
 import Banner from "./Banner";
 import { NavBarProps, RouteNav } from "../types";
 import { ROUTES } from "../const";
