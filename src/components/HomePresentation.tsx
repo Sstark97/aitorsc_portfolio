@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useGlobalContext } from "@containers/AppProvider";
 import { Link } from "react-router-dom";
 import SocialNetworks from "./SocialNetWorks";
-import LoadingSpinner from "@components/LoadingSpinner";
 import { AppState } from "../types";
 import "@styles/components/home_presentation.scss";
 
@@ -21,7 +20,6 @@ const HomePresentation = () => {
 
   return (
     <div className="presentation_container">
-      {presentation !== undefined ? (
         <>
           <div className="presentation_header">
             <p className="line__1">Hola, </p>
@@ -36,9 +34,6 @@ const HomePresentation = () => {
             <Link to="/contact">Contáctame</Link>
           </button>
         </>
-      ) : (
-        <LoadingSpinner />
-      )}
     </div>
   );
 };
