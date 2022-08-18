@@ -6,13 +6,13 @@ import { resolve } from 'path'
 
 const getAlliases = () => {
   return {
-    '@assets': resolve(__dirname, './src/assets'),
-    '@components': resolve(__dirname, './src/components'),
-    '@containers': resolve(__dirname, './src/containers'),
-    '@pages': resolve(__dirname, './src/pages'),
-    '@routes': resolve(__dirname, './src/routes'),
-    '@styles': resolve(__dirname, './src/styles'),
-    '@api': resolve(__dirname, './src/api'),
+    '@assets': resolve('./src/assets'),
+    '@components': resolve('./src/components'),
+    '@containers': resolve('./src/containers'),
+    '@pages': resolve('./src/pages'),
+    '@routes': resolve('./src/routes'),
+    '@styles': resolve('./src/styles'),
+    '@api': resolve('./src/api'),
   }
 
 }
