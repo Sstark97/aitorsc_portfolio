@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useGlobalContext } from "@containers/AppProvider";
+import { Link } from "react-router-dom";
 import SocialNetworks from "@components/SocialNetworks";
 import LoadingSpinner from "@components/LoadingSpinner";
 import { AppState } from "../types";
@@ -31,7 +32,9 @@ const HomePresentation = () => {
             {presentation}
             <SocialNetworks />
           </div>
-          <button className="presentation_btn">Contáctame</button>{" "}
+          <button className="presentation_btn">
+            <Link to="/contact">Contáctame</Link>
+          </button>
         </>
       ) : (
         <LoadingSpinner />
