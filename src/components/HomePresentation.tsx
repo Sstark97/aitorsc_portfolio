@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useGlobalContext } from "@containers/AppProvider";
 import { Link } from "react-router-dom";
-import SocialNetworks from "@components/SocialNetworks";
+import SocialNetworks from "./SocialNetWorks";
 import LoadingSpinner from "@components/LoadingSpinner";
 import { AppState } from "../types";
 import "@styles/components/home_presentation.scss";
