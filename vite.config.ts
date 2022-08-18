@@ -35,7 +35,7 @@ export default defineConfig(({ command, mode }) => {
 
     return {
  
-      plugins: [react(), splitVendorChunkPlugin(), viteCompression()],
+      plugins: [react(), splitVendorChunkPlugin(), viteCompression(), svgr()],
       build: {
         outDir: 'build',
         chunkSizeWarningLimit: 1000,
