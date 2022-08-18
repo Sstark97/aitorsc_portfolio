@@ -56,7 +56,9 @@ fieldset {
 }
 
 .edit_input input:focus ~ label,
-.textarea_input textarea:focus ~ label{
+.edit_input input:valid ~ label,
+.textarea_input textarea:focus ~ label,
+.textarea_input textarea:valid ~ label{
     transform: translateY(-50%) scale(0.8);
     background-color: $background;
     padding: 0 .2em;
