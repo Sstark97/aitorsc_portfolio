@@ -1,9 +1,10 @@
 import { Helmet } from "react-helmet";
 import ContactContainer from "@containers/ContactContainer";
 
-const Contact = () => <>
+const Contact = () => 
+<>
+{""}
 <Helmet>
-    {""}
     <title>ASC | Contacto</title>
     <meta name="title" content="ASC | Contacto" />
     <meta
