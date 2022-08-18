@@ -1,6 +1,6 @@
 import { RouteNav, SocialRoutes } from "./types";
-import { BsGithub } from "react-icons/bs";
-import { AiFillLinkedin } from "react-icons/ai";
+import { ReactComponent as Linkedin } from "@assets/linkedin.svg";
+import { ReactComponent as GitHub }  from "@assets/github.svg";
 
 export const ROUTES: RouteNav[] = [
   { route: "/", route_name: "Home" },
@@ -12,11 +12,11 @@ export const ROUTES: RouteNav[] = [
 export const SOCIAL_ROUTES: SocialRoutes[] = [
   {
     route: "https://www.linkedin.com/in/aitorscinfo/",
-    icon: AiFillLinkedin,
+    icon: Linkedin,
   },
   {
     route: "https://github.com/Sstark97",
-    icon: BsGithub,
+    icon: GitHub,
   },
 ];
 

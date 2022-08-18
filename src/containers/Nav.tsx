@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { ImCross } from "react-icons/im";
+import { ReactComponent as HamburgerMenu } from "@assets/hamburger.svg";
+import { ReactComponent as Cross } from "@assets/cross.svg";
 import NavBar from "@components/NavBar";
 import DesktopNavBar from "@components/DesktopNavBar";
 import "@styles/containers/nav.scss";
@@ -22,8 +22,8 @@ const Nav = () => {
         onChange={handleClickHamburger}
       />
       <label htmlFor="hamburger_check">
-        {isOpen && <ImCross />}
-        {!isOpen && <GiHamburgerMenu />}
+        {isOpen && <Cross />}
+        {!isOpen && <HamburgerMenu />}
       </label>
       <NavBar handleClickHamburger={handleClickHamburger}/>
       <DesktopNavBar />

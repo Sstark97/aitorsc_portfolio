@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv, splitVendorChunkPlugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import viteCompression from 'vite-plugin-compression';
+import svgr from "vite-plugin-svgr";
 import { resolve } from 'path'
 
 const getAlliases = () => {
@@ -22,7 +23,7 @@ export default defineConfig(({ command, mode }) => {
   if (command === 'serve' && mode === 'development') {
     return {
 
-      plugins: [react(), viteCompression()],
+      plugins: [react(), svgr(), viteCompression()],
       resolve: {
         alias: getAlliases(),
       },

@@ -50,8 +50,18 @@
         width: 50%;
     }
 
+    svg {
+        width: 1.2rem;
+        height: 1.2rem;
+
+        path {
+            fill: #fff;
+            width: 100%;
+        }
+    }
+
     a svg:hover {
-        color: $primary;
+        fill: $primary;
     }
 }
 
