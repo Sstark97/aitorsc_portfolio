@@ -1,9 +1,10 @@
+import { memo } from "react";
 import { BsGithub } from "react-icons/bs";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { Project } from "../types";
 import "@styles/components/project_text_card.scss";
 
-const ProjectTextCard = ({ name, description, repository, web }: Project) => (
+const ProjectTextCard = memo(({ name, description, repository, web }: Project) => (
     <div className="project_text">
     <div className="text-content">
       <h1 className="title">{name}</h1>
@@ -22,6 +23,6 @@ const ProjectTextCard = ({ name, description, repository, web }: Project) => (
       </div>
     </div>
   </div>
-);
+));
 
 export default ProjectTextCard

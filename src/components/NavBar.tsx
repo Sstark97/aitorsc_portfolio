@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import SocialNetworks from "@components/SocialNetworks";
 import Banner from "./Banner";
@@ -5,7 +6,7 @@ import { NavBarProps, RouteNav } from "../types";
 import { ROUTES } from "../const";
 import "@styles/components/nav_bar.scss";
 
-const NavBar = ({ handleClickHamburger }: NavBarProps) => {
+const NavBar = memo(({ handleClickHamburger }: NavBarProps) => {
   const { pathname } = useLocation();
 
   return (
@@ -29,6 +30,6 @@ const NavBar = ({ handleClickHamburger }: NavBarProps) => {
       <SocialNetworks />
     </nav>
   );
-};
+});
 
 export default NavBar;
