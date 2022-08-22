@@ -1,10 +1,10 @@
 // React Elements
-export interface ChildrenProps{
+export interface ChildrenProps {
     children?: React.ReactNode[]
 };
 
 export interface NavBarProps {
-    handleClickHamburger():void
+    handleClickHamburger(): void
 }
 
 export interface SkillBarProps {
@@ -14,14 +14,18 @@ export interface SkillBarProps {
 }
 
 export interface DataProps {
-    MyComponent: new() => React.Component<any, any>,
+    MyComponent: new () => React.Component<any, any>,
     props: Skill | Experience | Project,
     endPoint: string,
     column?: boolean
 }
 
 export interface ExpandedIconProps {
-    handleClickExpanded ():void;
+    handleClickExpanded(): void;
+}
+
+export interface IRenderProps {
+    path: string;
 }
 
 // Objects
@@ -44,7 +48,7 @@ export interface Portfolio {
     surname: string,
 };
 
-export interface Skill extends Required<Pick<SkillBarProps, 'name' | 'level'>> {}
+export interface Skill extends Required<Pick<SkillBarProps, 'name' | 'level'>> { }
 
 export interface Experience {
     position: string,
@@ -81,9 +85,9 @@ export interface DataSelect {
 // Context
 export interface AppState {
     portFolio: Portfolio,
-    skillData: Skill [],
-    experienceData: Experience [],
-    projectsData: Project [],
-    loadPortfolio():void,
-    loadData(endPoint: string):void,
+    skillData: Skill[],
+    experienceData: Experience[],
+    projectsData: Project[],
+    loadPortfolio(): void,
+    loadData(endPoint: string): void,
 }

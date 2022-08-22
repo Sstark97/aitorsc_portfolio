@@ -7,7 +7,6 @@ import { AppProvider } from "@containers/AppProvider";
 const App = () => {
   return (
     <Suspense fallback={<LoadingSpinner />}>
-      <BrowserRouter>
         <AppProvider>
           <Layout>
             <Routes>
@@ -18,7 +17,6 @@ const App = () => {
             </Routes>
           </Layout>
         </AppProvider>
-      </BrowserRouter>
     </Suspense>
   );
 };
