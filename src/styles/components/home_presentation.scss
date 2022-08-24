@@ -2,6 +2,10 @@
 @import '@styles/animation.scss';
 @import '@styles/mixins.scss';
 
+.presentation_container {
+  max-width: 100%;
+}
+
 .presentation_header {
   display: flex;
   flex-direction: column;
@@ -55,7 +59,7 @@
   white-space: nowrap;
   overflow: hidden;
   margin: -0.2rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -100,7 +104,7 @@
   }
 
   to {
-    width: 4.5rem;
+    width: 28%;
   }
 }
 
@@ -110,7 +114,7 @@
   }
 
   to {
-    width: 8.2rem;
+    width: 48%;
   }
 }
 
@@ -120,8 +124,22 @@
   }
 
   to {
-    width: 21.2rem;
+
+    max-width: 105%;
   }
+}
+
+@include md(tablet) {
+  @keyframes animated-text__1 {
+    from {
+      width: 0;
+    }
+  
+    to {
+      width: 16%;
+    }
+  }
+  
 }
 
 @include md(desktop) {
