@@ -13,7 +13,7 @@ const Nav = () => {
   };
 
   return (
-    <div className={isOpen ? "nav-container nav-color" : "nav-container"}>
+    <section className={isOpen ? "nav-container nav-color" : "nav-container"}>
       <input
         type="checkbox"
         name="hamburger_check"
@@ -27,7 +27,7 @@ const Nav = () => {
       </label>
       <NavBar handleClickHamburger={handleClickHamburger}/>
       <DesktopNavBar />
-    </div>
+    </section>
   );
 };
 

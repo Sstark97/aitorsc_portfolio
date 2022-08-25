@@ -1,11 +1,11 @@
 import "@styles/components/skills_presentation.scss";
 
 const SkillsPresentation = () => (
-    <div className="skills_presentation">
-      <div className="skills_header">
+    <section className="skills_presentation">
+      <article className="skills_header">
         <p className="skills_line__1">{"Habilidades &"}</p>
         <p className="skills_line__2">Experiencia</p>
-      </div>
+      </article>
       <p id="first_skill_p">
         Desde que comencé mi viaje como desarrollador hace casi 4 años, he
         trabajado como free-lance en proyectos independientes, participado en
@@ -30,7 +30,7 @@ const SkillsPresentation = () => (
           para conocer más detalles sobre mi Experiencia o contactarme.{" "}
         </span>
       </p>
-    </div>
+    </section>
 );
 
 export default SkillsPresentation;

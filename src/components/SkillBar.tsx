@@ -21,9 +21,9 @@ const SkillBar = memo(({ name, level, color}: SkillBarProps) => {
   return (
     <>
       <span>{ name }</span>
-      <div className="skill_bar_container">
+      <section className="skill_bar_container">
         <div className="skill_point" style={{ width: width, background: color }}></div>
-      </div>
+      </section>
     </>
   );
 });

@@ -12,7 +12,7 @@ const HomeContainer = memo(({ children }: ChildrenProps) => {
   useEffect(() => {}, [portFolio]);
 
   return (
-    <div className="home_container">
+    <section className="home_container">
       {portFolio === undefined ? (
         <LoadingSpinner />
       ) : (
@@ -21,7 +21,7 @@ const HomeContainer = memo(({ children }: ChildrenProps) => {
           <Moon id="moon_svg" />
         </>
       )}
-    </div>
+    </section>
   );
 });
 

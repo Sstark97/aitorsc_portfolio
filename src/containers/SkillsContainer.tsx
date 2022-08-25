@@ -16,12 +16,12 @@ const SkillsContainer = () => {
   } , [skillData, experienceData]);
 
   return (
-    <div className="skills_container">
+    <section className="skills_container">
       {skillData.length !== 0 ||
       experienceData.length !== 0 ? (
         <>
           <SkillsPresentation />
-          <div className="skills_data_container">
+          <article className="skills_data_container">
             <DataList
               MyComponent={SkillBar}
               props={["name", "level"]}
@@ -40,12 +40,12 @@ const SkillsContainer = () => {
               ]}
               endPoint="work"
             />
-          </div>
+          </article>
         </>
       ) : (
         <LoadingSpinner />
       )}
-    </div>
+    </section>
   );
 };
 

@@ -43,29 +43,29 @@ const ContactForm = () => {
     <form className="form_container" ref={formRef} onSubmit={handleSubmit}>
       {success && <div className="form_success">¡Gracias por contactarme!</div>}
       <fieldset>
-        <div className="edit_input">
+        <section className="edit_input">
           <input type="text" id="name" required />
           <label htmlFor="name">Nombre</label>
-        </div>
+        </section>
 
-        <div className="edit_input">
+        <section className="edit_input">
           <input type="email" id="email" required />
           <label htmlFor="email">Email</label>
-        </div>
+        </section>
 
-        <div className="edit_input">
+        <section className="edit_input">
           <input type="text" id="subject" required />
           <label htmlFor="subject">Asunto</label>
-        </div>
+        </section>
 
-        <div className="textarea_input">
+        <section className="textarea_input">
           <textarea id="message" required />
           <label htmlFor="message">Mensaje</label>
-        </div>
+        </section>
 
-        <div className="button">
+        <section className="button">
           <button type="submit">Enviar</button>
-        </div>
+        </section>
       </fieldset>
     </form>
   );

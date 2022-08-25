@@ -3,13 +3,13 @@ import { SocialRoutes } from "../types";
 import "@styles/containers/nav.scss";
 
 const SocialNetWorks = () => (
-    <div id="social_container">
+    <section id="social_container">
         {SOCIAL_ROUTES.map((route: SocialRoutes) => (
             <a className="social_icons" href={route.route} key={route.route}>
                 <route.icon/>
             </a>
         ))}
-    </div>
+    </section>
 );
 
 export default SocialNetWorks;
