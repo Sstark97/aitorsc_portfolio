@@ -12,7 +12,7 @@ const ProjectCard = memo(({ name, image, description, repository, web }: Project
   };
 
   return (
-    <div
+    <section
       className={
         expanded ? "project_card_container expanded" : "project_card_container"
       }
@@ -28,7 +28,7 @@ const ProjectCard = memo(({ name, image, description, repository, web }: Project
 
       <ProjectTextCard name={name} description={description} repository={repository} web={web} />
       <ExpandedIcon handleClickExpanded={handleClickExpanded} />
-    </div>
+    </section>
   );
 });
 

@@ -4,15 +4,15 @@ import { formatDate } from "../utils";
 import "@styles/components/experience_card.scss";
 
 const ExperienceCard = memo(({ position, company, description, start_date, final_date}: Experience) => (
-    <div className="experience_container">
+    <section className="experience_container">
         <h3>{position}</h3>
-        <div>
+        <article>
             <p id="company">{ company }</p>
             <span>{`${formatDate(new Date(start_date))}`}</span>
             { final_date && <span> - {`${formatDate(new Date(final_date))}`}</span> }
-        </div>
+        </article>
         <p>{ description }</p>
-    </div>
+    </section>
 ));
 
 export default ExperienceCard;

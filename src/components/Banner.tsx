@@ -14,10 +14,10 @@ const Banner = () => {
   }, [portFolio]);
 
   return (
-    <div className="banner">
+    <section className="banner">
       <div className="banner_name"> { name } </div>
       <div className="banner_ocuppation">Full Stack Developer</div>
-    </div>
+    </section>
   );
 };
 

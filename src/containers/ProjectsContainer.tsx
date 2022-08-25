@@ -14,7 +14,7 @@ const ProjectsContainer = () => {
   }, [projectsData]);
 
   return (
-    <div className="projects_container">
+    <section className="projects_container">
       {projectsData.length !== 0 ? (
         <>
           <ProjectsPresentation />
@@ -30,7 +30,7 @@ const ProjectsContainer = () => {
       ) : (
         <LoadingSpinner />
       )}
-    </div>
+    </section>
   );
 };
 

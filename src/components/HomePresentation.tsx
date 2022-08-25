@@ -19,7 +19,7 @@ const HomePresentation = () => {
   }, [portFolio]);
 
   return (
-    <div className="presentation_container">
+    <article className="presentation_container">
         <>
           <div className="presentation_header">
             <p className="line__1">Hola, </p>
@@ -34,7 +34,7 @@ const HomePresentation = () => {
             <Link to="/contact">Contáctame</Link>
           </button>
         </>
-    </div>
+    </article>
   );
 };
 

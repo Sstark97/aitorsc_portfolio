@@ -5,10 +5,10 @@ import "@styles/containers/contact.scss";
 
 const ContactContainer = () => {
   return (
-    <div className="contact_container">
+    <section className="contact_container">
       <ContactPresentation />
 
-      <div className="contact_form_container">
+      <article className="contact_form_container">
         <div>
           <p>
             Estoy interesado en introducirme de nuevo en el mundo laboral, o
@@ -18,8 +18,8 @@ const ContactContainer = () => {
           <img src={writter} alt="writter" />
         </div>
         <ContactForm />
-      </div>
-    </div>
+      </article>
+    </section>
   );
 };
 
