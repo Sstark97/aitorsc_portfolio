@@ -1,7 +1,7 @@
 
 import { cloneElement, Children, ReactElement } from "react";
 import { PresentationProps } from "../types";
-import "@styles/components/home_presentation.scss";
+import "@styles/containers/presentation.scss";
 
 const Presentation = ({ classContainer, children }: PresentationProps)=> {
 

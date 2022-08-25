@@ -1,14 +1,12 @@
 import { useState, useEffect, memo } from "react";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "@containers/AppProvider";
-import Presentation from "@components/Presentation";
+import Presentation from "@containers/Presentation";
 import SocialNetworks from "@components/SocialNetworks";
-import HomePresentation from "@components/HomePresentation";
 import LoadingSpinner from "@components/LoadingSpinner";
 import { ReactComponent as Moon } from "@assets/moon.svg";
 import { ChildrenProps, AppState } from "../types";
 import "@styles/containers/home.scss";
-import "@styles/components/home_presentation.scss";
 
 const HomeContainer = memo(({ children }: ChildrenProps) => {
   const [presentation, setPresentation] = useState<string>("");
