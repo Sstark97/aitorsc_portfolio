@@ -1,4 +1,4 @@
-import Presentation from "@containers/Presentation";
+import Presentation from "./Presentation";
 import ContactForm from "@components/ContactForm";
 import writter from "@assets/writter.svg";
 import "@styles/containers/contact.scss";
@@ -7,7 +7,7 @@ const ContactContainer = () => {
   return (
     <section className="contact_container">
       <Presentation classContainer="contact_header">
-        <p className="contact__line">Contacto</p>
+        {[<p className="contact__line">Contacto</p>]}
       </Presentation>
 
       <article className="contact_form_container">

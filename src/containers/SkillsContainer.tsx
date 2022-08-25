@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useGlobalContext } from "@containers/AppProvider";
-import Presentation from "@containers/Presentation";
+import Presentation from "./Presentation";
 import SkillBar from "@components/SkillBar";
 import ExperienceCard from "@components/ExperienceCard";
 import LoadingSpinner from "@components/LoadingSpinner";

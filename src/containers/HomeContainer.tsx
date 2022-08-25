@@ -1,8 +1,8 @@
 import { useState, useEffect, memo } from "react";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "@containers/AppProvider";
-import Presentation from "@containers/Presentation";
-import SocialNetworks from "@components/SocialNetworks";
+import Presentation from "./Presentation";
+import SocialNetworks from "../components/SocialNetWorks";
 import LoadingSpinner from "@components/LoadingSpinner";
 import { ReactComponent as Moon } from "@assets/moon.svg";
 import { ChildrenProps, AppState } from "../types";
@@ -24,12 +24,7 @@ const HomeContainer = memo(({ children }: ChildrenProps) => {
   return (
     <Presentation
       classContainer="home_container"
-      loading={portFolio === undefined}
     >
-      {portFolio === undefined ? (
-        <LoadingSpinner />
-      ) : (
-        <>
           <article className="presentation_container">
             <div className="presentation_header">
               <p className="line__1">Hola, </p>
@@ -45,8 +40,6 @@ const HomeContainer = memo(({ children }: ChildrenProps) => {
             </button>
           </article>
           <Moon id="moon_svg" />
-        </>
-      )}
     </Presentation>
   );
 });
