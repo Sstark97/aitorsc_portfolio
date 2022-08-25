@@ -3,6 +3,11 @@ export interface ChildrenProps{
     children?: React.ReactNode[]
 };
 
+export interface PresentationProps extends ChildrenProps{
+    classContainer: string;
+    home?: boolean;
+}
+
 export interface NavBarProps {
     handleClickHamburger():void
 }

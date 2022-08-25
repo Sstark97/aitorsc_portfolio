@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useGlobalContext } from "@containers/AppProvider";
-import ProjectsPresentation from "@components/ProjectsPresentation";
+import Presentation from "./Presentation";
 import ProjectCard from "@containers/ProjectCard";
 import DataList from "@components/DataList";
 import LoadingSpinner from "@components/LoadingSpinner";
@@ -17,7 +17,9 @@ const ProjectsContainer = () => {
     <section className="projects_container">
       {projectsData.length !== 0 ? (
         <>
-          <ProjectsPresentation />
+          <Presentation classContainer="projects_header">
+            {[<p className="projects__line">Proyectos</p>]}
+          </Presentation>
 
           <div className="projects">
             <DataList

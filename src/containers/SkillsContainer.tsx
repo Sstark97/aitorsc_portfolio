@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useGlobalContext } from "@containers/AppProvider";
-import SkillsPresentation from "@components/SkillsPresentation";
+import Presentation from "./Presentation";
 import SkillBar from "@components/SkillBar";
 import ExperienceCard from "@components/ExperienceCard";
 import LoadingSpinner from "@components/LoadingSpinner";
@@ -11,16 +11,44 @@ const SkillsContainer = () => {
   const { skillData, experienceData, loadData } = useGlobalContext();
 
   useEffect(() => {
-    ["skills", "work"].forEach(endPoint => loadData(endPoint));
-
-  } , [skillData, experienceData]);
+    ["skills", "work"].forEach((endPoint) => loadData(endPoint));
+  }, [skillData, experienceData]);
 
   return (
     <section className="skills_container">
-      {skillData.length !== 0 ||
-      experienceData.length !== 0 ? (
+      {skillData.length !== 0 || experienceData.length !== 0 ? (
         <>
-          <SkillsPresentation />
+          <Presentation classContainer="skills_presentation">
+            <article className="skills_header">
+              <p className="skills_line__1">{"Habilidades &"}</p>
+              <p className="skills_line__2">Experiencia</p>
+            </article>
+            <p id="first_skill_p">
+              Desde que comencé mi viaje como desarrollador hace casi 4 años, he
+              trabajado como free-lance en proyectos independientes, participado
+              en hackathons, trabajado en remoto para una start-up y he
+              colaborado con personas talentosas para crear aplicaciones web.
+            </p>
+            <p>
+              Desarrollo aplicaciones responsive rápidas y fáciles de usar,
+              siguiendo las mejores prácticas. Mi área principal es el Front-End
+              con React, TypeScript, Redux, Material UI, creando aplicaciones
+              web.
+            </p>
+            <p>
+              Además conozco algunas tecnologías usadas en el Back-End como
+              Express, Flask, MongoDB, SQLite, MariaDB, con las que he
+              desarrolado APIs Rest-Full o aplicaciones FullStack.
+            </p>
+            <p>
+              <span>Puedes visitar mi perfil de </span>
+              <a href="https://www.linkedin.com/in/aitorscinfo/">Linkedln</a>
+              <span>
+                para conocer más detalles sobre mi Experiencia o contactarme.
+              </span>
+            </p>
+          </Presentation>
+
           <article className="skills_data_container">
             <DataList
               MyComponent={SkillBar}
