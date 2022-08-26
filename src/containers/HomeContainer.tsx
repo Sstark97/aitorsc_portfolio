@@ -1,9 +1,8 @@
 import { useState, useEffect, memo } from "react";
 import { Link } from "react-router-dom";
-import { useGlobalContext } from "@containers/AppProvider";
+import { useGlobalContext, useAnimation } from "@hooks/index";
 import Presentation from "./Presentation";
 import SocialNetworks from "../components/SocialNetWorks";
-import LoadingSpinner from "@components/LoadingSpinner";
 import { ReactComponent as Moon } from "@assets/moon.svg";
 import { ChildrenProps, AppState } from "../types";
 import "@styles/containers/home.scss";
@@ -13,17 +12,23 @@ const HomeContainer = memo(({ children }: ChildrenProps) => {
   const [name, setName] = useState<string>("");
 
   const { portFolio }: AppState = useGlobalContext();
+  const { isAnimation, setAnimationInLocalStorage } = useAnimation("home");
 
   useEffect(() => {
     if (portFolio !== undefined) {
       setPresentation(portFolio.presentation);
       setName(portFolio.name);
-    }
+
+      if(!isAnimation()) {
+        setAnimationInLocalStorage(7500);
+      }
+    } 
   }, [portFolio]);
 
   return (
     <Presentation
       classContainer="home_container"
+      idContainer={isAnimation() ? "not_animated" : ""}
     >
           <article className="presentation_container">
             <div className="presentation_header">

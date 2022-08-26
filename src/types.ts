@@ -5,6 +5,7 @@ export interface ChildrenProps{
 
 export interface PresentationProps extends ChildrenProps{
     classContainer: string;
+    idContainer?: string;
     home?: boolean;
 }
 

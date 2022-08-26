@@ -3,7 +3,7 @@ import api from '@api/index';
 import { ChildrenProps, AppState, Portfolio, Skill, Experience, Project } from '../types';
 import { AxiosResponse } from 'axios';
 
-const context = createContext<AppState>({
+export const context = createContext<AppState>({
     portFolio: {} as Portfolio,
     skillData: [] as Skill[],
     experienceData: [] as Experience[],
@@ -44,5 +44,3 @@ export const AppProvider = ({ children }: ChildrenProps) => {
     );
 
 };
-
-export const useGlobalContext = () => useContext(context);

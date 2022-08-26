@@ -1,7 +1,8 @@
 @import './var.scss';
 @import './mixins.scss';
 
-body, html {
+body,
+html {
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -18,6 +19,14 @@ p {
 
 #root {
   height: 100%;
+}
+
+#not_animated * {
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -o-animation: none !important;
+  -ms-animation: none !important;
+  animation: none !important;
 }
 
 .container {

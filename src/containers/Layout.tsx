@@ -1,6 +1,6 @@
 import { useEffect, memo } from "react";
 import { ChildrenProps } from "../types";
-import { useGlobalContext } from "@containers/AppProvider";
+import { useGlobalContext } from "@hooks/index";
 import Nav from "./Nav";
 import "@styles/index.scss";
 

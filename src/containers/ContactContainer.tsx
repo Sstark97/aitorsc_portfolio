@@ -1,11 +1,20 @@
+import { useEffect } from "react";
+import { useAnimation } from "@hooks/index";
 import Presentation from "./Presentation";
 import ContactForm from "@components/ContactForm";
 import writter from "@assets/writter.svg";
 import "@styles/containers/contact.scss";
 
 const ContactContainer = () => {
+
+  const { isAnimation, setAnimationInLocalStorage } = useAnimation("contact");
+
+  useEffect(() => {
+    setAnimationInLocalStorage(2000);
+  } , []);
+
   return (
-    <section className="contact_container">
+    <section id={isAnimation() ? "not_animated" : ""} className="contact_container">
       <Presentation classContainer="contact_header">
         {[<p className="contact__line">Contacto</p>]}
       </Presentation>
