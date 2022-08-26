@@ -3,8 +3,6 @@ import { useState } from "react";
 export const useAnimation = (animation_key: string) => {
     const [animation, setAnimation] = useState(false);
 
-    console.log(animation);
-
     const isAnimation = () => {
         const animated: string = localStorage.getItem(animation_key) || "false";
 
