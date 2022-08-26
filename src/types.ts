@@ -92,4 +92,5 @@ export interface AppState {
     projectsData: Project [],
     loadPortfolio():void,
     loadData(endPoint: string):void,
+    handleChangeTheme():void,
 }

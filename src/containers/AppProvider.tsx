@@ -9,7 +9,8 @@ export const context = createContext<AppState>({
     experienceData: [] as Experience[],
     projectsData: [] as Project[],
     loadPortfolio: () => {},
-    loadData: (endPoint: string) => {}
+    loadData: (endPoint: string) => {},
+    handleChangeTheme: () => {},
 });
 
 export const AppProvider = ({ children }: ChildrenProps) => {
@@ -37,8 +38,14 @@ export const AppProvider = ({ children }: ChildrenProps) => {
         }
     }
 
+    const handleChangeTheme = () => {
+        const theme: string | null = localStorage.getItem("theme")
+        theme === "dark" ? localStorage.setItem("theme", "light") : localStorage.setItem("theme", "dark");
+        document.documentElement.setAttribute('data-theme', theme !== null ? theme : "dark");
+    }
+
     return (
-        <Provider value={{ portFolio, skillData, experienceData, projectsData, loadPortfolio, loadData }}>
+        <Provider value={{ portFolio, skillData, experienceData, projectsData, loadPortfolio, loadData, handleChangeTheme }}>
             {children}
         </Provider>
     );

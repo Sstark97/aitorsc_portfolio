@@ -1,10 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import { RouteNav } from "../types";
 import { ROUTES } from "../const";
+import { useGlobalContext } from "@hooks/index";
 import "@styles/components/desktop_nav.scss";
 
 const NavBar = () => {
   const { pathname } = useLocation();
+  const { handleChangeTheme } = useGlobalContext();
 
   return (
     <nav className="desktop_nav">
@@ -22,6 +24,7 @@ const NavBar = () => {
             </div>
           );
       })}
+      <button onClick={() => handleChangeTheme()}>Dark Mode</button>
     </nav>
   );
 };
