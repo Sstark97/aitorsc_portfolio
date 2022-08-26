@@ -28,7 +28,7 @@ fieldset {
 .edit_input input, 
 .textarea_input textarea {
     width: 90%;
-    border: solid 1.5px $primary;
+    border: solid 1.5px var(--primary);
     border-radius: 1rem;
     background: none;
     padding: 1rem;
@@ -52,7 +52,7 @@ fieldset {
 .edit_input input:focus, .edit_input input:valid,
 .textarea_input textarea:focus, .textarea_input textarea:valid {
     outline: none;
-    border: 1.5px solid $primary;
+    border: 1.5px solid var(--primary);
 }
 
 .edit_input input:focus ~ label,
@@ -60,9 +60,9 @@ fieldset {
 .textarea_input textarea:focus ~ label,
 .textarea_input textarea:valid ~ label{
     transform: translateY(-50%) scale(0.8);
-    background-color: $background;
+    background-color: var(--background);
     padding: 0 .2em;
-    color: $primary;
+    color: var(--primary);
 }
 
 textarea {
@@ -85,8 +85,8 @@ textarea {
 
 .button button{
     background: none;
-    border: 1px solid $primary;
-    color: $primary;
+    border: 1px solid var(--primary);
+    color: var(--primary);
     padding: 1rem 3rem 1rem 3rem;
     margin-top: 1rem;
     font-size: 1rem;
@@ -95,7 +95,7 @@ textarea {
 
 .button button:hover {
     color: #fff;
-    background: $hover_btn;
+    background: var(--hover_btn);
     cursor: pointer;
 }
 
@@ -104,9 +104,9 @@ textarea {
     z-index: 8;
     bottom: 1rem;
     left: 2.1rem;
-    border: 1px solid $primary;
+    border: 1px solid var(--primary);
     padding: 1rem;
-    background: $background;
+    background: var(--background);
     width: 75vw;
     text-align: center;
     animation: form_success 3s 1;

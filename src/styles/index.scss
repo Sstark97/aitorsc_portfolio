@@ -10,9 +10,10 @@
     --secondary:#{$secondary};
     --terciary: #{$terciary};
     --fourth: #{$fourth};
+    --cursor: #{$cursor};
 }
 
-body[data-theme = "light" ], html[data-theme = "light" ] {
+html[data-theme = "light" ] {
     --background: #{$light_background};
     --color: #{$light_color};
     --primary: #{$light_primary};
@@ -20,6 +21,7 @@ body[data-theme = "light" ], html[data-theme = "light" ] {
     --secondary: #{$light_secondary};
     --terciary: #{$light_terciary};
     --fourth: #{$light_fourth};
+    --cursor: #{$light_cursor};
 }
 
 body,
@@ -57,7 +59,7 @@ p {
 
   header {
     min-width: 100%;
-    background: $terciary;
+    background: var(--terciary);
   }
 
   main {

@@ -9,13 +9,13 @@
     z-index: 4;
     width: 100vw;
     height: 88vh;
-    background-color: $background;
+    background-color: var(--background);
 
     div {
         display: flex;
         justify-content: center;
         width: 100%;
-        border-bottom: 1px solid #282828;
+        border-bottom: 1px solid var(--fourth);
         padding: 1rem;
     }
 
@@ -27,11 +27,19 @@
 
     a {
         text-decoration: none;
-        color: #909096;
+        color: var(--secondary);
+    }
+
+    svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        g {
+            fill: var(--color);
+        }
     }
 
     #first_element {
-        border-top: 1px solid #282828;
+        border-top: 1px solid var(--fourth);
         margin-top: 1.8rem;
     }
 
@@ -45,7 +53,8 @@
         justify-content: center;
         align-items: center;
         padding: 0.2rem;
-        background: #000;
+        background: var(--terciary);
+        color: var(--color);
         margin-bottom: 2.3rem;
 
         div {
@@ -63,9 +72,17 @@
         }
 
         .banner_ocuppation {
+            display: flex;
+            align-items: center;
             font-size: 0.9rem;
             padding-bottom: 0.9rem;
-            color: #a5a5a5;
+            color: var(--secondary);
+
+            span {
+                display: flex;
+                align-items: center;
+                margin-left: 1.5vw;
+            }
         }
     }
 

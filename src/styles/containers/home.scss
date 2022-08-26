@@ -17,11 +17,11 @@
     padding: 0;
 
     a {
-        color: $secondary;
+        color: var(--secondary);
         width: 20%;
 
         svg {
-            fill : $secondary;
+            fill : var(--secondary);
         }
     }
 }
@@ -87,7 +87,7 @@
     
             svg:hover {
                 cursor: pointer;
-                fill: $primary;
+                fill: var(--primary);
             }
         }
     }

@@ -10,7 +10,7 @@ const ExpandedIcon = memo(({ handleClickExpanded }: ExpandedIconProps ) => (
       width="30"
       onClick={handleClickExpanded}
     >
-      <path d="M5 30L50 5l45 25" fill="none" stroke="#fff" strokeWidth="5" />
+      <path d="M5 30L50 5l45 25" fill="none" strokeWidth="5" />
     </svg>
 ));
 
