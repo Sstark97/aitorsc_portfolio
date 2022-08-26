@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useGlobalContext } from "@hooks/index";
+import { useGlobalContext, useAnimation } from "@hooks/index";
 import Presentation from "./Presentation";
 import SkillBar from "@components/SkillBar";
 import ExperienceCard from "@components/ExperienceCard";
@@ -9,13 +9,18 @@ import "@styles/containers/skills.scss";
 
 const SkillsContainer = () => {
   const { skillData, experienceData, loadData } = useGlobalContext();
+  const { isAnimation, setAnimationInLocalStorage } = useAnimation("skills");
 
   useEffect(() => {
     ["skills", "work"].forEach((endPoint) => loadData(endPoint));
   }, [skillData, experienceData]);
 
+  useEffect(() => {
+    setAnimationInLocalStorage(5000);
+  } , []);
+
   return (
-    <section className="skills_container">
+    <section id={isAnimation() ? "not_animated" : ""} className="skills_container">
       {skillData.length !== 0 || experienceData.length !== 0 ? (
         <>
           <Presentation classContainer="skills_presentation">
