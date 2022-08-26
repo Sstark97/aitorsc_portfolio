@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useGlobalContext } from "@hooks/useGlobalContext";
+import { useGlobalContext } from "@hooks/index";
 import Presentation from "./Presentation";
 import ProjectCard from "@containers/ProjectCard";
 import DataList from "@components/DataList";

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useGlobalContext } from "@hooks/useGlobalContext";
+import { useGlobalContext } from "@hooks/index";
 import { AppState } from "../types";
 import "@styles/containers/nav.scss";
 

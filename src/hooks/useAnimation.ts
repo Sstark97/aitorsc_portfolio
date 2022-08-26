@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-const useAnimation = (animation_key: string) => {
+export const useAnimation = (animation_key: string) => {
     const [animation, setAnimation] = useState(false);
+
+    console.log(animation);
 
     const isAnimation = () => {
         const animated: string = localStorage.getItem(animation_key) || "false";
@@ -13,24 +15,17 @@ const useAnimation = (animation_key: string) => {
         return false;
     }
 
-    const setAnimationInLocalStorage = () => {
-        localStorage.setItem(animation_key, "true");
+    const setAnimationInLocalStorage = (timeout: number) => {
+        setTimeout(() => {
+            localStorage.setItem(animation_key, "true");
+            setAnimation(true);
+        } , timeout);
     }
 
     const dropAnimationInLocalStorage = () => {
         localStorage.removeItem(animation_key);
+        setAnimation(false);
     }
 
-    useEffect(() => {
-
-        if(!isAnimation()) {
-            setAnimationInLocalStorage();
-            setAnimation(true);
-        }
-
-    }, [animation]); 
-
-    return { animation, dropAnimationInLocalStorage };
+    return { isAnimation, setAnimationInLocalStorage, dropAnimationInLocalStorage };
 };
-
-export default useAnimation;

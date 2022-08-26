@@ -3,11 +3,11 @@ import { cloneElement, Children, ReactElement } from "react";
 import { PresentationProps } from "../types";
 import "@styles/containers/presentation.scss";
 
-const Presentation = ({ classContainer, children }: PresentationProps)=> {
+const Presentation = ({ classContainer, idContainer, children }: PresentationProps)=> {
 
   return (
-    <section className={classContainer}>
-        {Children.toArray(children).map((child) => cloneElement(child as ReactElement<any>, { classContainer }))} 
+    <section id={idContainer} className={classContainer}>
+        {Children.toArray(children).map((child) => cloneElement(child as ReactElement<any>))} 
     </section>
   )
 }
