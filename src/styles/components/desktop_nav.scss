@@ -7,10 +7,19 @@
     }
 
     .desktop_nav {
-        background: $terciary;
+        background: var(--terciary);
 
         a:hover {
-            color: $primary;
+            color: var(--hover_btn);
+        }
+        
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            g {
+                fill: var(--color);
+            }
         }
     }
+    
 }

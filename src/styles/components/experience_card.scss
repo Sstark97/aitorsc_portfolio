@@ -3,7 +3,7 @@
 @import '@styles/mixins.scss';
 
 .experience_container {
-    background: $fourth;
+    background: var(--fourth);
     padding: 1.5rem;
 
     h3 {

@@ -7,7 +7,7 @@
     justify-content: flex-end;
     align-items: flex-end;
     min-height: 100%;
-    background: $background;
+    background: var(--background);
 
     .hamburger_nav {
         display: none;
@@ -28,7 +28,7 @@
         svg {
             width: 80%;
             height: 80%;
-            fill: $secondary;
+            fill: var(--secondary);
         }
     }
 
@@ -61,14 +61,14 @@
 
             a {
                 text-decoration: none;
-                color: $secondary;
+                color: var(--secondary);
                 height: fit-content;
 
             }
     
         
             .link_focus {
-                color: $primary;
+                color: var(--hover_btn);
             }
         }
 
@@ -76,7 +76,7 @@
 }
 
 .nav-color {
-    background: #000;
+    background: var(--terciary);
     position: absolute;
     z-index: 2;
     overflow: hidden;

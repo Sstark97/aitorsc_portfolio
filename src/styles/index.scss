@@ -1,6 +1,29 @@
 @import './var.scss';
 @import './mixins.scss';
 
+:root {
+
+    --background: #{$background};
+    --color: #{$color};
+    --primary: #{$primary};
+    --hover_btn: #{$hover_btn};
+    --secondary:#{$secondary};
+    --terciary: #{$terciary};
+    --fourth: #{$fourth};
+    --cursor: #{$cursor};
+}
+
+html[data-theme = "light" ] {
+    --background: #{$light_background};
+    --color: #{$light_color};
+    --primary: #{$light_primary};
+    --hover_btn: #{$light_hover_btn};
+    --secondary: #{$light_secondary};
+    --terciary: #{$light_terciary};
+    --fourth: #{$light_fourth};
+    --cursor: #{$light_cursor};
+}
+
 body,
 html {
   height: 100vh;
@@ -8,7 +31,7 @@ html {
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-  background: $background;
+  background: var(--background);
   color: $color;
   font-family: $poppins_font;
 }
@@ -36,7 +59,7 @@ p {
 
   header {
     min-width: 100%;
-    background: #000;
+    background: var(--terciary);
   }
 
   main {
@@ -53,7 +76,7 @@ p {
     header {
       position: fixed;
       z-index: 5;
-      background: #181818;
+      background: $terciary;
     }
 
     main {

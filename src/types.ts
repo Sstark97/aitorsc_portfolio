@@ -90,6 +90,9 @@ export interface AppState {
     skillData: Skill [],
     experienceData: Experience [],
     projectsData: Project [],
+    theme: string,
     loadPortfolio():void,
     loadData(endPoint: string):void,
+    handleChangeTheme():void,
+    loadDarkMode():void
 }

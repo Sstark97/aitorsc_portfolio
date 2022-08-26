@@ -5,10 +5,11 @@ import Nav from "./Nav";
 import "@styles/index.scss";
 
 const Layout = memo(({ children }: ChildrenProps) => {
-  const { loadPortfolio } = useGlobalContext();
+  const { loadPortfolio, loadDarkMode } = useGlobalContext();
 
   useEffect(() => {
     loadPortfolio();
+    loadDarkMode();
   }, []);
 
   return (
