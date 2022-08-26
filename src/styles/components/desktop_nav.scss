@@ -8,5 +8,9 @@
 
     .desktop_nav {
         background: $terciary;
+
+        a:hover {
+            color: $primary;
+        }
     }
 }
