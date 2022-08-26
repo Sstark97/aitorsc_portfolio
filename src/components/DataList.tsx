@@ -1,5 +1,5 @@
 import { useEffect, useState, memo} from "react";
-import { useGlobalContext } from "@containers/AppProvider";
+import { useGlobalContext } from "@hooks/useGlobalContext";
 import { SKILLS_COLORS } from "../const";
 import { DataProps, AppState, Skill, Experience, Project, DataSelect } from "../types";
 import "@styles/components/data_list.scss";

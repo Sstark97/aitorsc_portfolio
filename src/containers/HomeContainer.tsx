@@ -1,6 +1,6 @@
 import { useState, useEffect, memo } from "react";
 import { Link } from "react-router-dom";
-import { useGlobalContext } from "@containers/AppProvider";
+import { useGlobalContext } from "@hooks/useGlobalContext";
 import Presentation from "./Presentation";
 import SocialNetworks from "../components/SocialNetWorks";
 import LoadingSpinner from "@components/LoadingSpinner";

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useGlobalContext } from "@containers/AppProvider";
+import { useGlobalContext } from "@hooks/useGlobalContext";
 import Presentation from "./Presentation";
 import SkillBar from "@components/SkillBar";
 import ExperienceCard from "@components/ExperienceCard";

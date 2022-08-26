@@ -26,5 +26,6 @@
     "routes": ["./src/routes/*"],
     "styles": ["./src/styles/*"],
     "api": ["./src/api/*"],
+    "hooks": ["./src/hooks/*"],
   }
 }

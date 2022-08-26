@@ -13,6 +13,7 @@ const getAlliases = () => {
     '@routes': resolve('src/routes'),
     '@styles': resolve('src/styles'),
     '@api': resolve('src/api'),
+    '@hooks': resolve('src/hooks'),
   }
 
 }
