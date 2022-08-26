@@ -47,7 +47,7 @@ const SkillsContainer = () => {
             </p>
             <p>
               <span>Puedes visitar mi perfil de </span>
-              <a href="https://www.linkedin.com/in/aitorscinfo/">Linkedln</a>
+              <a href="https://www.linkedin.com/in/aitorscinfo/">Linkedln </a>
               <span>
                 para conocer más detalles sobre mi Experiencia o contactarme.
               </span>
