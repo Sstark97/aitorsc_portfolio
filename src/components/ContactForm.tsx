@@ -29,7 +29,7 @@ const ContactForm = () => {
       });
 
       const response = await api.post("contact", formResponse);
-      console.log(response);
+      
       if (response.status === 400) {
         setError(true);
       } else {

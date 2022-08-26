@@ -13,7 +13,7 @@ const SkillsContainer = () => {
 
   useEffect(() => {
     ["skills", "work"].forEach((endPoint) => loadData(endPoint));
-  }, [skillData, experienceData]);
+  }, []);
 
   useEffect(() => {
     setAnimationInLocalStorage(5000);
