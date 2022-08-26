@@ -1,11 +1,14 @@
 import { useState, useEffect, memo} from 'react';
+import { useAnimation } from '@hooks/index';
 import { SkillBarProps } from "../types";
 import "@styles/components/skill_bar.scss";
 
 const SkillBar = memo(({ name, level, color}: SkillBarProps) => {
     const [width, setWidth ] = useState("0%");
+    const { isAnimation } = useAnimation("skills");
 
     useEffect(() => {
+      if(!isAnimation()) {
         let progress = 0;
         let interval = setInterval(() => {
             progress++;
@@ -15,6 +18,9 @@ const SkillBar = memo(({ name, level, color}: SkillBarProps) => {
                 clearInterval(interval);
             }
         }, 30);
+      } else {
+        setWidth(`${level * 10}%`);
+      }
     }, []);
 
 
