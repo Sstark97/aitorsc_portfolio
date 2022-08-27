@@ -8,7 +8,6 @@ import {
   Experience,
   Project,
 } from "../types";
-import { AxiosResponse } from "axios";
 
 export const context = createContext<AppState>({
   portFolio: {} as Portfolio,
