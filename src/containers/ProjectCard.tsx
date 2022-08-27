@@ -20,7 +20,6 @@ const ProjectCard = memo(({ name, image, description, repository, web }: Project
           className="project_card_img"
           src={image}
           alt={name}
-          loading="lazy"
         />
       )}
 
