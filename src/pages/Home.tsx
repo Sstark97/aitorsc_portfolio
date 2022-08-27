@@ -20,7 +20,7 @@ const Home = () => {
       setPresentation(portFolio.presentation);
       setName(portFolio.name);
     }
-  }, [portFolio]);
+  }, [portFolio, presentation, name]);
 
   return (
     <>
