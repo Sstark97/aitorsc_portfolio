@@ -48,6 +48,10 @@
     .contact_container {
         margin-top: 14vh;
         width: 90%;
+
+        p {
+            max-width: none;
+        }
     }
 
     .edit_input,
