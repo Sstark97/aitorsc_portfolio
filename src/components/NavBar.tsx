@@ -1,7 +1,5 @@
-import { memo } from "react";
+import { memo, lazy} from "react";
 import { Link, useLocation } from "react-router-dom";
-import SocialNetworks from "./SocialNetWorks";
-import Banner from "./Banner";
 import { NavBarProps, RouteNav } from "../types";
 import { ROUTES } from "../const";
 import "@styles/components/nav_bar.scss";
@@ -31,5 +29,8 @@ const NavBar = memo(({ handleClickHamburger }: NavBarProps) => {
     </nav>
   );
 });
+
+const SocialNetworks = lazy(() => import("./SocialNetWorks"));
+const Banner = lazy(() => import("@components/Banner"));
 
 export default NavBar;
