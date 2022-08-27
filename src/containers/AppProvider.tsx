@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, memo} from "react";
 import api from "@api/index";
 import {
   ChildrenProps,
@@ -8,7 +8,6 @@ import {
   Experience,
   Project,
 } from "../types";
-import { AxiosResponse } from "axios";
 
 export const context = createContext<AppState>({
   portFolio: {} as Portfolio,
@@ -22,7 +21,7 @@ export const context = createContext<AppState>({
   loadDarkMode: () => {},
 });
 
-export const AppProvider = ({ children }: ChildrenProps) => {
+export const AppProvider = memo(({ children }: ChildrenProps) => {
   const { Provider } = context;
 
   const [portFolio, setPortfolio] = useState<Portfolio>({} as Portfolio);
@@ -32,19 +31,37 @@ export const AppProvider = ({ children }: ChildrenProps) => {
   const [theme, setTheme] = useState<string>("dark");
 
   const loadPortfolio = async () => {
-    const userData: any = await api.get("user");
-    setPortfolio(userData.data);
+    const portfoloInLocale = localStorage.getItem("portfolio_data");
+
+    console.log("portfoloInLocale", portfoloInLocale);
+    
+    if (portfoloInLocale) {
+      setPortfolio(JSON.parse(portfoloInLocale));
+    } else { 
+      const { data }: { data: Portfolio } = await api.get("/user");
+      setPortfolio(data);
+      localStorage.setItem("portfolio_data", JSON.stringify(data));
+    }
   };
 
   const loadData = async (endPoint: string) => {
-    const responseData: AxiosResponse = await api.get(endPoint);
+    const dataLocale = localStorage.getItem(`${endPoint}_data`);
+    let dataState: Skill[]  | Experience[] | Project[] = [];
+    
+    if(dataLocale === null) {
+      const { data }: { data: Skill[]  | Experience[] | Project[]} = await api.get(endPoint);
+      localStorage.setItem(`${endPoint}_data`, JSON.stringify(data));
+      dataState = data;
+    } else {
+      dataState = JSON.parse(dataLocale);
+    }
 
     if (endPoint === "skills") {
-      setSkillData(responseData.data);
+      setSkillData(dataState as Skill[]);
     } else if (endPoint === "work") {
-      setExperienceData(responseData.data);
+      setExperienceData(dataState as Experience[]);
     } else if (endPoint === "projects") {
-      setProjectsData(responseData.data);
+      setProjectsData(dataState as Project[]);
     }
   };
 
@@ -92,4 +109,4 @@ export const AppProvider = ({ children }: ChildrenProps) => {
       {children}
     </Provider>
   );
-};
+});
