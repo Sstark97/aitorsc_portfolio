@@ -1,4 +1,6 @@
-import { useState, memo, lazy } from "react";
+import { useState, memo } from "react";
+import ProjectTextCard from "@components/ProjectTextCard";
+import ExpandedIcon from "@components/ExpandedIcon";
 import { Project } from "../types";
 import "@styles/containers/project_card.scss";
 
@@ -28,8 +30,5 @@ const ProjectCard = memo(({ name, image, description, repository, web }: Project
     </section>
   );
 });
-
-const ProjectTextCard = lazy(() => import("@components/ProjectTextCard"));
-const ExpandedIcon = lazy(() => import("@components/ExpandedIcon"));
 
 export default ProjectCard;
