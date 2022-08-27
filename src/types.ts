@@ -9,7 +9,8 @@ export interface PresentationProps extends ChildrenProps{
     home?: boolean;
 };
 
-export interface PortfolioContainerProps extends Pick<PresentationProps , 'children' | 'classContainer'>{
+export interface PortfolioContainerProps extends Pick<PresentationProps , 'children'>{
+    classContainer?: string;
     dataToLoad?: string | string[],
     animationKey: string,
     animationTime: number,
