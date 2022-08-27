@@ -6,20 +6,20 @@ import { AppProvider } from "@containers/AppProvider";
 
 const App = () => {
   return (
-    <Suspense fallback={<LoadingSpinner />}>
-      <BrowserRouter>
-        <AppProvider>
-          <Layout>
+    <BrowserRouter>
+      <AppProvider>
+        <Layout>
+          <Suspense fallback={<LoadingSpinner />}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/skills" element={<Skills />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
-          </Layout>
-        </AppProvider>
-      </BrowserRouter>
-    </Suspense>
+          </Suspense>
+        </Layout>
+      </AppProvider>
+    </BrowserRouter>
   );
 };
 
