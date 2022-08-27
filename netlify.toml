@@ -6,4 +6,4 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    accept-encoding: gzip, deflate, br
+    accept-encoding = "gzip, deflate, br"
