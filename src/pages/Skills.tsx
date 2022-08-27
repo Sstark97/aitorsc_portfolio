@@ -9,6 +9,7 @@ import DataList from "@components/DataList";
 
 const Skills = () => {
   const { skillData, experienceData } = useGlobalContext();
+  console.log("skillData", skillData);
 
   return (
     <>
