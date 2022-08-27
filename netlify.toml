@@ -1,4 +1,9 @@
 [[redirects]]
   from = "/*"
-  to = "/index.html.gz"
+  to = "/index.html"
   status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    accept-encoding: gzip, deflate, br
