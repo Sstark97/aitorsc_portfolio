@@ -36,7 +36,7 @@ export default defineConfig(({ command, mode }) => {
 
     return {
  
-      plugins: [react(), splitVendorChunkPlugin(), viteCompression({deleteOriginFile: true}), svgr()],
+      plugins: [react(), splitVendorChunkPlugin(), viteCompression({deleteOriginFile: true, algorithm:'brotliCompress'}), svgr()],
       build: {
         outDir: 'build',
         chunkSizeWarningLimit: 1000,
