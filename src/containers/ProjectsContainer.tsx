@@ -12,7 +12,7 @@ const ProjectsContainer = () => {
 
   useEffect(() => {
     loadData("projects");
-  
+
   }, []);
 
   useEffect(() => {

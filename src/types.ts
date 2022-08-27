@@ -7,11 +7,17 @@ export interface PresentationProps extends ChildrenProps{
     classContainer: string;
     idContainer?: string;
     home?: boolean;
+};
+
+export interface PortfolioContainerProps extends Pick<PresentationProps , 'children' | 'classContainer'>{
+    dataToLoad?: string | string[],
+    animationKey: string,
+    animationTime: number,
 }
 
 export interface NavBarProps {
     handleClickHamburger():void
-}
+};
 
 export interface SkillBarProps {
     name: string,
