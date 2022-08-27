@@ -1,7 +1,5 @@
-import { useState, memo } from "react";
+import { useState, memo, lazy } from "react";
 import { Project } from "../types";
-import ExpandedIcon from "@components/ExpandedIcon";
-import ProjectTextCard from "@components/ProjectTextCard";
 import "@styles/containers/project_card.scss";
 
 const ProjectCard = memo(({ name, image, description, repository, web }: Project) => {
@@ -31,5 +29,8 @@ const ProjectCard = memo(({ name, image, description, repository, web }: Project
     </section>
   );
 });
+
+const ProjectTextCard = lazy(() => import("@components/ProjectTextCard"));
+const ExpandedIcon = lazy(() => import("@components/ExpandedIcon"));
 
 export default ProjectCard;
