@@ -1,6 +1,5 @@
 import { defineConfig, loadEnv, splitVendorChunkPlugin } from 'vite'
 import react from '@vitejs/plugin-react'
-import viteCompression from 'vite-plugin-compression';
 import svgr from "vite-plugin-svgr";
 import { resolve } from 'path'
 
@@ -24,7 +23,7 @@ export default defineConfig(({ command, mode }) => {
   if (command === 'serve' && mode === 'development') {
     return {
 
-      plugins: [react(), svgr(), viteCompression()],
+      plugins: [react(), svgr()],
       resolve: {
         alias: getAlliases(),
       },
@@ -36,7 +35,7 @@ export default defineConfig(({ command, mode }) => {
 
     return {
  
-      plugins: [react(), splitVendorChunkPlugin(), viteCompression({deleteOriginFile: true, algorithm:'brotliCompress'}), svgr()],
+      plugins: [react(), splitVendorChunkPlugin(), svgr()],
       build: {
         outDir: 'build',
         chunkSizeWarningLimit: 1000,
