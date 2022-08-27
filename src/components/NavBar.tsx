@@ -30,7 +30,7 @@ const NavBar = memo(({ handleClickHamburger }: NavBarProps) => {
   );
 });
 
-const SocialNetworks = lazy(() => import("@components/SocialNetworks"));
+const SocialNetworks = lazy(() => import("./SocialNetWorks"));
 const Banner = lazy(() => import("@components/Banner"));
 
 export default NavBar;
