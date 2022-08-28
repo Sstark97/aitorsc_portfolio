@@ -14,18 +14,18 @@ const Nav = () => {
 
   return (
     <section className={isOpen ? "nav-container nav-color" : "nav-container"}>
-      <input
-        type="checkbox"
-        name="hamburger_check"
-        id="hamburger_check"
-        checked={isOpen}
-        onChange={handleClickHamburger}
-      />
       <label htmlFor="hamburger_check">
         {isOpen && <Cross />}
         {!isOpen && <HamburgerMenu />}
       </label>
-      <NavBar handleClickHamburger={handleClickHamburger}/>
+      <input
+        type="checkbox"
+        id="hamburger_check"
+        checked={isOpen}
+        onChange={handleClickHamburger}
+        aria-label="hamburger menu"
+      />
+      <NavBar handleClickHamburger={handleClickHamburger} />
       <DesktopNavBar />
     </section>
   );

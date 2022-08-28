@@ -45,6 +45,7 @@ export interface RouteNav {
 
 export interface SocialRoutes extends Required<Pick<RouteNav, 'route'>> {
     icon: React.FC<React.SVGProps<SVGSVGElement>>;
+    label: string;
 }
 
 export interface Portfolio {

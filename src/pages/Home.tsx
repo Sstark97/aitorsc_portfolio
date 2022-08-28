@@ -52,7 +52,7 @@ const Home = () => {
                 <SocialNetworks />
               </div>
               <button className="presentation_btn">
-                <Link to="/contact">Contáctame</Link>
+                <Link to="/contact" tabIndex={-1}>Contáctame</Link>
               </button>
             </article>
             <Moon id="moon_svg" />
