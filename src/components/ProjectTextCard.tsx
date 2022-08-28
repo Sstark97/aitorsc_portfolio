@@ -11,11 +11,11 @@ const ProjectTextCard = memo(
         <h1 className="title">{name}</h1>
         <div className="body-text">{description}</div>
         <div className="project_links">
-          <a href={repository} target="_blank" rel="noopener noreferrer">
+          <a href={repository} target="_blank" rel="noopener noreferrer" aria-label="repository">
             <GitHub />
           </a>
           {web && (
-            <a href={web} target="_blank" rel="noopener noreferrer">
+            <a href={web} target="_blank" rel="noopener noreferrer" aria-label="website">
               <Link />
             </a>
           )}

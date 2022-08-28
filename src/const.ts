@@ -12,10 +12,12 @@ export const ROUTES: RouteNav[] = [
 export const SOCIAL_ROUTES: SocialRoutes[] = [
   {
     route: "https://www.linkedin.com/in/aitorscinfo/",
+    label: "Linkedin",
     icon: Linkedin,
   },
   {
     route: "https://github.com/Sstark97",
+    label: "GitHub",
     icon: GitHub,
   },
 ];

@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import PortfolioContainer from "../containers/PortfolioContainer";
 import Presentation from "@containers/Presentation";
 import ContactForm from "@components/ContactForm";
