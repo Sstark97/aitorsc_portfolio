@@ -51,15 +51,11 @@ export const AppProvider = memo(({ children }: ChildrenProps) => {
 
   const handleChangeTheme = () => {
     const theme: string | null | undefined = secureStorage.getItem("theme");
-    if (theme === "dark" || null || undefined) {
-      secureStorage.setItem("theme", "light");
-      document.documentElement.setAttribute("data-theme", "light");
-      setTheme("light");
-    } else {
-      secureStorage.setItem("theme", "dark");
-      document.documentElement.setAttribute("data-theme", "dark");
-      setTheme("dark");
-    }
+    const isDarkMode: boolean = theme === "dark";
+
+    secureStorage.setItem("theme", isDarkMode ? "light" : "dark");
+    setTheme(isDarkMode ? "light" : "dark");
+    loadDarkMode();
   };
 
   const loadDarkMode = () => {
