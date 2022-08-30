@@ -17,7 +17,7 @@ export const context = createContext<AppState>({
   projectsData: [] as Project[],
   theme: "dark" as string,
   loadPortfolio: () => {},
-  loadData: (endPoint: string) => {},
+  loadData: () => {},
   handleChangeTheme: () => {},
   loadDarkMode: () => {},
 });
@@ -39,36 +39,25 @@ export const AppProvider = memo(({ children }: ChildrenProps) => {
 
   const loadPortfolio = async () => {
     const portfolioInLocale = await isInLocale<Portfolio>("portfolio_data","/user");
-    
     setPortfolio(portfolioInLocale);
   };
 
   const loadData = async (endPoint: string) => {
     const dataState = await isInLocale<Skill[] | Experience[] | Project[]>(`${endPoint}_data`,endPoint);
-
     loadDataOption[endPoint](dataState);
   };
 
-  const handleChangeTheme = () => {
-    const theme: string | null | undefined = secureStorage.getItem("theme");
-    const isDarkMode: boolean = theme === "dark";
+  const isDarkMode = () => secureStorage.getItem("theme") === "dark";
+  
 
-    secureStorage.setItem("theme", isDarkMode ? "light" : "dark");
-    setTheme(isDarkMode ? "light" : "dark");
+  const handleChangeTheme = () => {
+    secureStorage.setItem("theme", isDarkMode() ? "light" : "dark");
+    setTheme(isDarkMode() ? "light" : "dark");
     loadDarkMode();
   };
 
   const loadDarkMode = () => {
-    const theme: string | null | undefined= secureStorage.getItem("theme");
-
-    if (theme !== null && theme !== undefined) {
-      document.documentElement.setAttribute("data-theme", theme);
-      setTheme(theme);
-    } else {
-        secureStorage.setItem("theme", "dark");
-        document.documentElement.setAttribute("data-theme", "dark");
-        setTheme("dark");
-    }
+    document.documentElement.setAttribute("data-theme", isDarkMode() || isDarkMode === undefined ? "dark" : "light");
   };
 
   return (
