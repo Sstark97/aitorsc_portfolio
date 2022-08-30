@@ -21,7 +21,7 @@ const Skills = () => {
         classContainer="skills_container"
         dataToLoad={["skills", "work"]}
         animationKey="skills"
-        animationTime={5000}
+        animationTime={2000}
       >
         {skillData.length !== 0 || experienceData.length !== 0 ? (
           <>
