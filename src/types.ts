@@ -43,7 +43,7 @@ export interface RouteNav {
     route_name: string;
 }
 
-export interface Routes extends Partial<Pick<RouteNav , 'route'>> { 
+export interface Routes extends Pick<RouteNav , 'route'> { 
     element: React.LazyExoticComponent<React.ComponentType<any>>;
 }
 

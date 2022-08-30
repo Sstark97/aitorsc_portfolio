@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { routes } from "../const";
+import { ROUTER } from "../const";
 import LoadingSpinner from "@components/LoadingSpinner";
 import Layout from "@containers/Layout";
 import { AppProvider } from "@context/AppProvider";
@@ -14,7 +14,7 @@ const App = () => {
         <Layout>
           <Suspense fallback={<LoadingSpinner />}>
             <Routes>
-              {routes.map( route=> (
+              {ROUTER.map( route=> (
                 <Route key={route.route} path={route.route} element={<route.element />}/>
               ))}
             </Routes>
