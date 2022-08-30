@@ -1,4 +1,4 @@
 import { useContext } from 'react';
-import { context } from '@containers/AppProvider';
+import { context } from '@context/context';
 
 export const useGlobalContext = () => useContext(context);

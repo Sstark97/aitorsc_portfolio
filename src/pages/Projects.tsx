@@ -20,7 +20,7 @@ const Projects = () => {
         classContainer="projects_container"
         dataToLoad="projects"
         animationKey="projects"
-        animationTime={5000}
+        animationTime={2000}
       >
         {projectsData.length !== 0 ? (
           <>
