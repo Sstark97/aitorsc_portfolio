@@ -1,5 +1,6 @@
 import { createContext, useState, memo} from "react";
 import api from "@api/index";
+import { secureStorage } from "../utils";
 import {
   ChildrenProps,
   AppState,
@@ -31,29 +32,27 @@ export const AppProvider = memo(({ children }: ChildrenProps) => {
   const [theme, setTheme] = useState<string>("dark");
 
   const loadPortfolio = async () => {
-    const portfoloInLocale = localStorage.getItem("portfolio_data");
-
-    console.log("portfoloInLocale", portfoloInLocale);
+    const portfoloInLocale = secureStorage.getItem("portfolio_data");
     
     if (portfoloInLocale) {
-      setPortfolio(JSON.parse(portfoloInLocale));
+      setPortfolio(portfoloInLocale);
     } else { 
       const { data }: { data: Portfolio } = await api.get("/user");
       setPortfolio(data);
-      localStorage.setItem("portfolio_data", JSON.stringify(data));
+      secureStorage.setItem("portfolio_data", data);
     }
   };
 
   const loadData = async (endPoint: string) => {
-    const dataLocale = localStorage.getItem(`${endPoint}_data`);
+    const dataLocale = secureStorage.getItem(`${endPoint}_data`);
     let dataState: Skill[]  | Experience[] | Project[] = [];
     
-    if(dataLocale === null) {
+    if(dataLocale === null || dataLocale === undefined) {
       const { data }: { data: Skill[]  | Experience[] | Project[]} = await api.get(endPoint);
-      localStorage.setItem(`${endPoint}_data`, JSON.stringify(data));
+      secureStorage.setItem(`${endPoint}_data`, data);
       dataState = data;
     } else {
-      dataState = JSON.parse(dataLocale);
+      dataState = dataLocale;
     }
 
     if (endPoint === "skills") {
@@ -66,27 +65,26 @@ export const AppProvider = memo(({ children }: ChildrenProps) => {
   };
 
   const handleChangeTheme = () => {
-    const theme: string | null = localStorage.getItem("theme");
-    console.log(theme);
-    if (theme === "dark" || null) {
-      localStorage.setItem("theme", "light");
+    const theme: string | null | undefined = secureStorage.getItem("theme");
+    if (theme === "dark" || null || undefined) {
+      secureStorage.setItem("theme", "light");
       document.documentElement.setAttribute("data-theme", "light");
       setTheme("light");
     } else {
-      localStorage.setItem("theme", "dark");
+      secureStorage.setItem("theme", "dark");
       document.documentElement.setAttribute("data-theme", "dark");
       setTheme("dark");
     }
   };
 
   const loadDarkMode = () => {
-    const theme: string | null = localStorage.getItem("theme");
+    const theme: string | null | undefined= secureStorage.getItem("theme");
 
-    if (theme !== null) {
+    if (theme !== null && theme !== undefined) {
       document.documentElement.setAttribute("data-theme", theme);
       setTheme(theme);
     } else {
-        localStorage.setItem("theme", "dark");
+        secureStorage.setItem("theme", "dark");
         document.documentElement.setAttribute("data-theme", "dark");
         setTheme("dark");
     }

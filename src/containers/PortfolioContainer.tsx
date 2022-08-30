@@ -29,6 +29,8 @@ const PortfolioContainer = memo(
 
     useEffect(() => {
       if(!isAnimation()){
+        console.log("animation");
+        console.log(animationKey);
         setAnimationInLocalStorage(animationTime);
       }
     }, []);
