@@ -1,5 +1,3 @@
-import React from "react";
-
 // React Elements
 export interface ChildrenProps{
     children?: React.ReactNode[] | React.ReactNode;
@@ -43,6 +41,10 @@ export interface ExpandedIconProps {
 export interface RouteNav {
     route: string;
     route_name: string;
+}
+
+export interface Routes extends Pick<RouteNav , 'route'> { 
+    element: React.LazyExoticComponent<React.ComponentType<any>>;
 }
 
 export interface SocialRoutes extends Required<Pick<RouteNav, 'route'>> {

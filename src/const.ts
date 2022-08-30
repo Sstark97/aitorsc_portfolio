@@ -1,6 +1,22 @@
-import { RouteNav, SocialRoutes } from "./types";
+import { lazy } from "react";
+import { Routes, RouteNav, SocialRoutes } from "./types";
 import { ReactComponent as Linkedin } from "@assets/linkedin.svg";
 import { ReactComponent as GitHub }  from "@assets/github.svg";
+
+const Home = lazy(() => import("@pages/Home"));
+const Contact = lazy(() => import("@pages/Contact"));
+const Projects = lazy(() => import("@pages/Projects"));
+const Skills = lazy(() => import("@pages/Skills"));
+const NotFound = lazy(() => import("@pages/NotFound"));
+
+
+export const ROUTER: Routes[] = [
+  { route: "/", element: Home },
+  { route: "/skills", element: Skills },
+  { route: "/projects", element: Projects },
+  { route: "/contact", element: Contact },
+  { route: "*", element: NotFound },
+]
 
 export const ROUTES: RouteNav[] = [
   { route: "/", route_name: "Home" },
