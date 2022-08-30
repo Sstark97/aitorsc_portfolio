@@ -13,7 +13,6 @@ export const useAnimation = (animation_key: string) => {
     }
 
     const setAnimationInLocalStorage = (timeout: number) => {
-        console.log(`setAnimationInLocalStorage: ${timeout}`);
         setTimeout(() => {
             secureStorage.setItem(animation_key, "true");
         } , timeout);
