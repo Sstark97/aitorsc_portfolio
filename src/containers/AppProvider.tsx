@@ -1,7 +1,5 @@
 import { createContext, useState, memo} from "react";
-import api from "@api/index";
-import { isInLocale } from "../utils";
-import { secureStorage } from "../utils";
+import { isInLocale, secureStorage } from "../utils";
 import {
   ChildrenProps,
   AppState,
@@ -9,6 +7,7 @@ import {
   Skill,
   Experience,
   Project,
+  LoadDataObject
 } from "../types";
 
 export const context = createContext<AppState>({
@@ -32,23 +31,22 @@ export const AppProvider = memo(({ children }: ChildrenProps) => {
   const [projectsData, setProjectsData] = useState<Project[]>([]);
   const [theme, setTheme] = useState<string>("dark");
 
+  const loadDataOption: LoadDataObject = {
+    "skills": setSkillData,
+    "experiences": setExperienceData,
+    "projects": setProjectsData,
+  }
+
   const loadPortfolio = async () => {
     const portfolioInLocale = await isInLocale<Portfolio>("portfolio_data","/user");
     
     setPortfolio(portfolioInLocale);
-    
   };
 
   const loadData = async (endPoint: string) => {
     const dataState = await isInLocale<Skill[] | Experience[] | Project[]>(`${endPoint}_data`,endPoint);
 
-    if (endPoint === "skills") {
-      setSkillData(dataState as Skill[]);
-    } else if (endPoint === "work") {
-      setExperienceData(dataState as Experience[]);
-    } else if (endPoint === "projects") {
-      setProjectsData(dataState as Project[]);
-    }
+    loadDataOption[endPoint](dataState);
   };
 
   const handleChangeTheme = () => {
