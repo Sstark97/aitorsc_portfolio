@@ -1,5 +1,6 @@
 import { createContext, useState, memo} from "react";
 import api from "@api/index";
+import { isInLocale } from "../utils";
 import { secureStorage } from "../utils";
 import {
   ChildrenProps,
@@ -32,28 +33,14 @@ export const AppProvider = memo(({ children }: ChildrenProps) => {
   const [theme, setTheme] = useState<string>("dark");
 
   const loadPortfolio = async () => {
-    const portfoloInLocale = secureStorage.getItem("portfolio_data");
+    const portfolioInLocale = await isInLocale<Portfolio>("portfolio_data","/user");
     
-    if (portfoloInLocale) {
-      setPortfolio(portfoloInLocale);
-    } else { 
-      const { data }: { data: Portfolio } = await api.get("/user");
-      setPortfolio(data);
-      secureStorage.setItem("portfolio_data", data);
-    }
+    setPortfolio(portfolioInLocale);
+    
   };
 
   const loadData = async (endPoint: string) => {
-    const dataLocale = secureStorage.getItem(`${endPoint}_data`);
-    let dataState: Skill[]  | Experience[] | Project[] = [];
-    
-    if(dataLocale === null || dataLocale === undefined) {
-      const { data }: { data: Skill[]  | Experience[] | Project[]} = await api.get(endPoint);
-      secureStorage.setItem(`${endPoint}_data`, data);
-      dataState = data;
-    } else {
-      dataState = dataLocale;
-    }
+    const dataState = await isInLocale<Skill[] | Experience[] | Project[]>(`${endPoint}_data`,endPoint);
 
     if (endPoint === "skills") {
       setSkillData(dataState as Skill[]);
