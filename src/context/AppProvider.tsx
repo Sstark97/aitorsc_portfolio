@@ -1,26 +1,14 @@
-import { createContext, useState, memo} from "react";
+import { memo, useState } from "react";
 import { isInLocale, secureStorage } from "../utils";
+import { context } from "./context";
 import {
   ChildrenProps,
-  AppState,
   Portfolio,
   Skill,
   Experience,
   Project,
   LoadDataObject
 } from "../types";
-
-export const context = createContext<AppState>({
-  portFolio: {} as Portfolio,
-  skillData: [] as Skill[],
-  experienceData: [] as Experience[],
-  projectsData: [] as Project[],
-  theme: "dark" as string,
-  loadPortfolio: () => {},
-  loadData: () => {},
-  handleChangeTheme: () => {},
-  loadDarkMode: () => {},
-});
 
 export const AppProvider = memo(({ children }: ChildrenProps) => {
   const { Provider } = context;
@@ -47,7 +35,7 @@ export const AppProvider = memo(({ children }: ChildrenProps) => {
     loadDataOption[endPoint](dataState);
   };
 
-  const isDarkMode = () => secureStorage.getItem("theme") === "dark";
+  const isDarkMode = () => secureStorage.getItem("theme") === "dark" || secureStorage.getItem("theme") === undefined;
   
 
   const handleChangeTheme = () => {
@@ -56,9 +44,7 @@ export const AppProvider = memo(({ children }: ChildrenProps) => {
     loadDarkMode();
   };
 
-  const loadDarkMode = () => {
-    document.documentElement.setAttribute("data-theme", isDarkMode() || isDarkMode === undefined ? "dark" : "light");
-  };
+  const loadDarkMode = () => document.documentElement.setAttribute("data-theme", isDarkMode() ? "dark" : "light");
 
   return (
     <Provider
