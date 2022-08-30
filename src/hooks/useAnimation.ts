@@ -1,10 +1,9 @@
-import { useState } from "react";
+import { secureStorage } from "../utils";
 
 export const useAnimation = (animation_key: string) => {
-    const [animation, setAnimation] = useState(false);
 
     const isAnimation = () => {
-        const animated: string = localStorage.getItem(animation_key) || "false";
+        const animated: string = secureStorage.getItem(animation_key) || "false";
 
         if (animated !== "false") {
             return true;
@@ -14,15 +13,14 @@ export const useAnimation = (animation_key: string) => {
     }
 
     const setAnimationInLocalStorage = (timeout: number) => {
+        console.log(`setAnimationInLocalStorage: ${timeout}`);
         setTimeout(() => {
-            localStorage.setItem(animation_key, "true");
-            setAnimation(true);
+            secureStorage.setItem(animation_key, "true");
         } , timeout);
     }
 
     const dropAnimationInLocalStorage = () => {
-        localStorage.removeItem(animation_key);
-        setAnimation(false);
+        secureStorage.removeItem(animation_key);
     }
 
     return { isAnimation, setAnimationInLocalStorage, dropAnimationInLocalStorage };

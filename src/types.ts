@@ -1,3 +1,5 @@
+import React from "react";
+
 // React Elements
 export interface ChildrenProps{
     children?: React.ReactNode[] | React.ReactNode;
@@ -90,6 +92,10 @@ export interface ContactFormElement extends Element {
 
 export interface DataSelect {
     [key: string]: Experience[] | Project[] | Skill[]
+}
+
+export interface LoadDataObject {
+    [key: string]: React.Dispatch<React.SetStateAction<any>>
 }
 
 // Context

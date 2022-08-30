@@ -1,5 +1,5 @@
 import { createContext, useState, memo} from "react";
-import api from "@api/index";
+import { isInLocale, secureStorage } from "../utils";
 import {
   ChildrenProps,
   AppState,
@@ -7,6 +7,7 @@ import {
   Skill,
   Experience,
   Project,
+  LoadDataObject
 } from "../types";
 
 export const context = createContext<AppState>({
@@ -30,63 +31,41 @@ export const AppProvider = memo(({ children }: ChildrenProps) => {
   const [projectsData, setProjectsData] = useState<Project[]>([]);
   const [theme, setTheme] = useState<string>("dark");
 
-  const loadPortfolio = async () => {
-    const portfoloInLocale = localStorage.getItem("portfolio_data");
+  const loadDataOption: LoadDataObject = {
+    "skills": setSkillData,
+    "experiences": setExperienceData,
+    "projects": setProjectsData,
+  }
 
-    console.log("portfoloInLocale", portfoloInLocale);
+  const loadPortfolio = async () => {
+    const portfolioInLocale = await isInLocale<Portfolio>("portfolio_data","/user");
     
-    if (portfoloInLocale) {
-      setPortfolio(JSON.parse(portfoloInLocale));
-    } else { 
-      const { data }: { data: Portfolio } = await api.get("/user");
-      setPortfolio(data);
-      localStorage.setItem("portfolio_data", JSON.stringify(data));
-    }
+    setPortfolio(portfolioInLocale);
   };
 
   const loadData = async (endPoint: string) => {
-    const dataLocale = localStorage.getItem(`${endPoint}_data`);
-    let dataState: Skill[]  | Experience[] | Project[] = [];
-    
-    if(dataLocale === null) {
-      const { data }: { data: Skill[]  | Experience[] | Project[]} = await api.get(endPoint);
-      localStorage.setItem(`${endPoint}_data`, JSON.stringify(data));
-      dataState = data;
-    } else {
-      dataState = JSON.parse(dataLocale);
-    }
+    const dataState = await isInLocale<Skill[] | Experience[] | Project[]>(`${endPoint}_data`,endPoint);
 
-    if (endPoint === "skills") {
-      setSkillData(dataState as Skill[]);
-    } else if (endPoint === "work") {
-      setExperienceData(dataState as Experience[]);
-    } else if (endPoint === "projects") {
-      setProjectsData(dataState as Project[]);
-    }
+    loadDataOption[endPoint](dataState);
   };
 
   const handleChangeTheme = () => {
-    const theme: string | null = localStorage.getItem("theme");
-    console.log(theme);
-    if (theme === "dark" || null) {
-      localStorage.setItem("theme", "light");
-      document.documentElement.setAttribute("data-theme", "light");
-      setTheme("light");
-    } else {
-      localStorage.setItem("theme", "dark");
-      document.documentElement.setAttribute("data-theme", "dark");
-      setTheme("dark");
-    }
+    const theme: string | null | undefined = secureStorage.getItem("theme");
+    const isDarkMode: boolean = theme === "dark";
+
+    secureStorage.setItem("theme", isDarkMode ? "light" : "dark");
+    setTheme(isDarkMode ? "light" : "dark");
+    loadDarkMode();
   };
 
   const loadDarkMode = () => {
-    const theme: string | null = localStorage.getItem("theme");
+    const theme: string | null | undefined= secureStorage.getItem("theme");
 
-    if (theme !== null) {
+    if (theme !== null && theme !== undefined) {
       document.documentElement.setAttribute("data-theme", theme);
       setTheme(theme);
     } else {
-        localStorage.setItem("theme", "dark");
+        secureStorage.setItem("theme", "dark");
         document.documentElement.setAttribute("data-theme", "dark");
         setTheme("dark");
     }
