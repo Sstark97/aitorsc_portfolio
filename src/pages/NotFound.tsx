@@ -17,14 +17,13 @@ const NotFound = () => {
       <Meteor
         className="meteor"
       />
-      <p className="title">Oh no!!</p>
+      <p className="title">Not Found</p>
       <p className="subtitle">
-        You’re either misspelling the URL <br /> or requesting a page that's no
-        longer here.
+        Está escribiendo mal la url <br /> o la página no existe.
       </p>
       <div className="align">
         <a className="btn-back" onClick={() => navigate(-1)}>
-          Back to previous page
+          Vuelva a la página anterior
         </a>
       </div>
       <Astronaut
