@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /version/
+Sitemap: https://ascinfo.netlify.app/sitemap.xml
