@@ -11,7 +11,7 @@ const Contact = () => (
       <meta name="title" content="ASC | Contacto" />
       <meta
         name="description"
-        content="Página de contacto para solicitar información."
+        content="Contacta conmigo para solicitar información sobre mis servicios, proponerme proyectos, nuevas ideas, cualquier colaboración  o cualquier duda que tengas."
       />
     </Helmet>
     <PortfolioContainer classContainer="contact_container" animationKey="contact" animationTime={2000}>

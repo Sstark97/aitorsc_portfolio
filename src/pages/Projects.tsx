@@ -14,7 +14,7 @@ const Projects = () => {
       <Helmet>
         <title>ASC | Proyectos</title>
         <meta name="title" content="ASC | Proyectos" />
-        <meta name="description" content="Página de proyectos realizados." />
+        <meta name="description" content="En esta página podrás consultar los proyectos que he realizado, una breve descripción sus repositorios de GitHub y los enlaces a sus respectivos despliegues" />
       </Helmet>
       <PortfolioContainer
         classContainer="projects_container"
