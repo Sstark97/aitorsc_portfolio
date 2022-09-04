@@ -9,9 +9,7 @@ import "@styles/index.scss";
 const Layout = memo(({ children }: ChildrenProps) => {
   const { loadPortfolio, loadDarkMode } = useGlobalContext();
   const { pathname } = useLocation();
-
-  console.log(pathname);
-
+  
   useEffect(() => {
     loadPortfolio();
     loadDarkMode();
