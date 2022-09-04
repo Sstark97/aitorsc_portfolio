@@ -7,11 +7,11 @@ import Nav from "./Nav";
 import "@styles/index.scss";
 
 const Layout = memo(({ children }: ChildrenProps) => {
-  const { loadPortfolio, loadDarkMode } = useGlobalContext();
+  const { loadData, loadDarkMode } = useGlobalContext();
   const { pathname } = useLocation();
   
   useEffect(() => {
-    loadPortfolio();
+    loadData("user");
     loadDarkMode();
   }, []);
 

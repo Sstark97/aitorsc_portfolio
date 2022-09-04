@@ -15,7 +15,6 @@ const getAlliases = () => {
     '@api': resolve('src/api'),
     '@hooks': resolve('src/hooks'),
   }
-
 }
 
 export default defineConfig(({ command, mode }) => {
