@@ -4,6 +4,7 @@
 @include md (desktop) {
     .nav-container {
         justify-content: flex-start;
+        padding:0;
     }
 
     .desktop_nav {
