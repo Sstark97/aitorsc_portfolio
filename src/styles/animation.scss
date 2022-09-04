@@ -100,6 +100,54 @@
     }
 }
 
+@keyframes form_success {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes animateC {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(45deg);
+    }
+
+    100% {
+        transform: rotate(405deg);
+    }
+}
+
+@keyframes floating {
+    from {
+        transform: translateY(0px);
+    }
+
+    65% {
+        transform: translateY(15px);
+    }
+
+    to {
+        transform: translateY(-0px);
+    }
+}
+
 @include md(tablet) {
     @keyframes animated-text__1 {
         from {

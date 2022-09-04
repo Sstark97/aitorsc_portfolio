@@ -2,26 +2,25 @@
 @import './mixins.scss';
 
 :root {
-
-    --background: #{$background};
-    --color: #{$color};
-    --primary: #{$primary};
-    --hover_btn: #{$hover_btn};
-    --secondary:#{$secondary};
-    --terciary: #{$terciary};
-    --fourth: #{$fourth};
-    --cursor: #{$cursor};
+  --background: #{$background};
+  --color: #{$color};
+  --primary: #{$primary};
+  --hover_btn: #{$hover_btn};
+  --secondary:#{$secondary};
+  --terciary: #{$terciary};
+  --fourth: #{$fourth};
+  --cursor: #{$cursor};
 }
 
-html[data-theme = "light" ] {
-    --background: #{$light_background};
-    --color: #{$light_color};
-    --primary: #{$light_primary};
-    --hover_btn: #{$light_hover_btn};
-    --secondary: #{$light_secondary};
-    --terciary: #{$light_terciary};
-    --fourth: #{$light_fourth};
-    --cursor: #{$light_cursor};
+html[data-theme="light"] {
+  --background: #{$light_background};
+  --color: #{$light_color};
+  --primary: #{$light_primary};
+  --hover_btn: #{$light_hover_btn};
+  --secondary: #{$light_secondary};
+  --terciary: #{$light_terciary};
+  --fourth: #{$light_fourth};
+  --cursor: #{$light_cursor};
 }
 
 body,
@@ -75,7 +74,6 @@ p {
     header {
       position: fixed;
       z-index: 5;
-      background: $terciary;
     }
 
     main {
@@ -84,5 +82,4 @@ p {
       padding: 0;
     }
   }
-
 }
