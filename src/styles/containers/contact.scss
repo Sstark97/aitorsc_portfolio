@@ -1,5 +1,6 @@
 @import '@styles/mixins.scss';
 @import '@styles/var.scss';
+@import '@styles/animation.scss';
 
 .contact_container {
     display: flex;
@@ -14,21 +15,11 @@
     width: 100%;
     color: var(--color);
 
-    animation: contact-animated-presentation 1s steps(30, end) 1s 1 normal both;
+    animation: animated-presentation 1s steps(30, end) 1s 1 normal both;
 
     img {
         max-width: 80%;
         display: none;
-    }
-}
-
-@keyframes contact-animated-presentation {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
     }
 }
 
