@@ -13,8 +13,8 @@ const Skills = () => {
   return (
     <>
       <Helmet>
-        <title>ASC | Habilidades</title>
-        <meta name="title" content="ASC | Habilidades" />
+        <title>Aitor Santana Cabrera - Habilidades</title>
+        <meta name="title" content="Aitor Santana Cabrera - Habilidades" />
         <meta name="description" content="Descubre cuales son mis habilidades en el mundon del desarrollo de software, que nivel tengo en cada una de ellas y cuál es mi trayectoria profesional" />
       </Helmet>
       <PortfolioContainer

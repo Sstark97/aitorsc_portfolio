@@ -12,8 +12,8 @@ const Projects = () => {
   return (
     <>
       <Helmet>
-        <title>ASC | Proyectos</title>
-        <meta name="title" content="ASC | Proyectos" />
+        <title>Aitor Santana Cabrera - Proyectos</title>
+        <meta name="title" content="Aitor Santana Cabrera - Proyectos" />
         <meta name="description" content="En esta página podrás consultar los proyectos que he realizado, una breve descripción sus repositorios de GitHub y los enlaces a sus respectivos despliegues" />
       </Helmet>
       <PortfolioContainer

@@ -25,8 +25,8 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>ASC | Full Stack Developer</title>
-        <meta name="title" content="ASC | Full Stack Developer" />
+        <title>Aitor Santana Cabrera - Full Stack Developer</title>
+        <meta name="title" content="Aitor Santana Cabrera - Full Stack Developer" />
         <meta
           name="description"
           content="Soy Desarrollador Web Full-Stack, especializado en el stack MERN, que desarrollar su mayor pasión, programar webapps o cualquier tipo de software."

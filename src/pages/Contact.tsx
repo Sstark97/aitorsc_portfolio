@@ -7,8 +7,8 @@ import writter from "@assets/writter.svg";
 const Contact = () => (
   <>
     <Helmet>
-      <title>ASC | Contacto</title>
-      <meta name="title" content="ASC | Contacto" />
+      <title>Aitor Santana Cabrera - Contacto</title>
+      <meta name="title" content="Aitor Santana Cabrera - Contacto" />
       <meta
         name="description"
         content="Contacta conmigo para solicitar información sobre mis servicios, proponerme proyectos, nuevas ideas, cualquier colaboración  o cualquier duda que tengas."
