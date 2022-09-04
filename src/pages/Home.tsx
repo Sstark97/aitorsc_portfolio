@@ -38,9 +38,9 @@ const Home = () => {
         />
         <meta name="theme-color" content="#ffffff" />
       </Helmet>
-      <PortfolioContainer animationKey="home" animationTime={7500}>
+      <PortfolioContainer classContainer="home_container" animationKey="home" animationTime={7500}>
         {portFolio !== undefined ? (
-          <Presentation classContainer="home_container" idContainer="">
+          <Presentation home>
             <article className="presentation_container">
               <div className="presentation_header">
                 <p className="line__1">Hola, </p>
