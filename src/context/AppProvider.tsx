@@ -21,7 +21,7 @@ export const AppProvider = memo(({ children }: ChildrenProps) => {
 
   const loadDataOption: LoadDataObject = {
     "skills": setSkillData,
-    "experiences": setExperienceData,
+    "work": setExperienceData,
     "projects": setProjectsData,
   }
 
