@@ -1,0 +1,127 @@
+@import '@styles/var.scss';
+@import '@styles/animation.scss';
+@import '@styles/mixins.scss';
+
+.project_card_container {
+    background: var(--fourth);
+    height: 18rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    margin: 1.2rem;
+    padding: 0 1.2rem;
+    position: relative;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.025);
+    text-align: center;
+    transition: height 1000ms;
+    color: transparent;
+
+    a {
+        text-decoration: none;
+        color: #fff;
+
+        svg {
+            fill-opacity: 0;
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+    }
+
+}
+
+.project_card_img {
+    max-width: 100%;
+    height: 12rem;
+    object-fit: cover;
+    background: var(--fourth);
+    transform: translateY(3rem);
+    transition: transform 1000ms;
+}
+
+.project_links {
+    display: flex;
+    justify-content: space-between;
+    width: 20.5%;
+    margin: 0 auto;
+    margin-top: 1rem;
+
+    a {
+        width: 50%;
+    }
+
+    svg {
+        width: 1.2rem;
+        height: 1.2rem;
+
+        path {
+            fill: var(--color);
+            width: 100%;
+        }
+    }
+
+    a svg:hover {
+        fill: $primary;
+    }
+}
+
+.expanded {
+    height: auto;
+    padding-bottom: 1.5rem;
+    color: #fff;
+
+    a {
+        svg {
+            fill-opacity: 1;
+            color: #fff;
+        }
+    }
+}
+
+
+.expanded .project_card_img {
+    transform: translateY(0);
+}
+
+@include md (tablet) {
+    .project_card_container {
+        left: calc(50% - 1.2rem);
+        transform: translateX(-50%);
+        margin: 0;
+        margin-left: 0.8rem;
+        height: 20rem;
+    }
+
+    .project_card_img {
+        height: 11rem;
+    }
+
+    .expanded .project_card_img {
+        margin-top: 1rem;
+    }
+
+    .project_links {
+        width: 35%;
+    }
+
+    .expanded {
+        height: 23rem;
+    }
+}
+
+@include md (desktop) {
+    .project_links {
+        width: 12%;
+    }
+
+    .expanded {
+        height: 26rem;
+
+        a {
+            svg {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+    }
+}

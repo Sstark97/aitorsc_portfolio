@@ -1,0 +1,25 @@
+@import '../mixins.scss';
+@import './nav_bar.scss';
+
+@include md (desktop) {
+    .nav-container {
+        justify-content: flex-start;
+    }
+
+    .desktop_nav {
+        background: var(--terciary);
+
+        a:hover {
+            color: var(--hover_btn);
+        }
+        
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;
+
+            fill: var(--color);
+
+        }
+    }
+    
+}

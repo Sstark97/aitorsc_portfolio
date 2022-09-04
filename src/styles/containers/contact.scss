@@ -1,0 +1,61 @@
+@import '@styles/mixins.scss';
+@import '@styles/var.scss';
+
+.contact_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contact_form_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    color: var(--color);
+
+    animation: contact-animated-presentation 1s steps(30, end) 1s 1 normal both;
+
+    img {
+        max-width: 80%;
+        display: none;
+    }
+}
+
+@keyframes contact-animated-presentation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@include md (tablet) {
+    .contact_form_container {
+        flex-direction: row;
+        align-items: flex-start;
+
+        img {
+            display: block;
+        }
+    }
+
+}
+
+@include md (desktop) {
+    .contact_container {
+        margin-top: 14vh;
+        width: 90%;
+
+        p {
+            max-width: none;
+        }
+    }
+
+    .edit_input,
+    .textarea_input {
+        margin-bottom: 4%;
+    }
+}

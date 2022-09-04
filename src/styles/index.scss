@@ -1,0 +1,89 @@
+@import './var.scss';
+@import './mixins.scss';
+
+:root {
+
+    --background: #{$background};
+    --color: #{$color};
+    --primary: #{$primary};
+    --hover_btn: #{$hover_btn};
+    --secondary:#{$secondary};
+    --terciary: #{$terciary};
+    --fourth: #{$fourth};
+    --cursor: #{$cursor};
+}
+
+html[data-theme = "light" ] {
+    --background: #{$light_background};
+    --color: #{$light_color};
+    --primary: #{$light_primary};
+    --hover_btn: #{$light_hover_btn};
+    --secondary: #{$light_secondary};
+    --terciary: #{$light_terciary};
+    --fourth: #{$light_fourth};
+    --cursor: #{$light_cursor};
+}
+
+body,
+html {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background: var(--background);
+  color: $color;
+  font-family: $poppins_font;
+}
+
+p {
+  max-width: 75ch;
+}
+
+#root {
+  height: 100%;
+}
+
+#not_animated * {
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -o-animation: none !important;
+  -ms-animation: none !important;
+  animation: none !important;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  header {
+    min-width: 100%;
+    background: var(--terciary);
+  }
+
+  main {
+    min-height: 90%;
+    padding: 0 2rem 0 2rem;
+  }
+
+}
+
+@include md(desktop) {
+  .container {
+    flex-direction: column;
+
+    header {
+      position: fixed;
+      z-index: 5;
+      background: $terciary;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+    }
+  }
+
+}

@@ -1,0 +1,14 @@
+.expanded_icon {
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 1rem);
+    transform-origin: 50%;
+    transform: rotate(180deg);
+    transition: transform 1000ms;
+    cursor: pointer;
+    stroke: var(--color)
+}
+
+.expanded .expanded_icon {
+    transform: rotate(0deg);
+}
