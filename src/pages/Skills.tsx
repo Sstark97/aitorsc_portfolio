@@ -15,7 +15,7 @@ const Skills = () => {
       <Helmet>
         <title>ASC | Habilidades</title>
         <meta name="title" content="ASC | Habilidades" />
-        <meta name="description" content="Página de habilidades." />
+        <meta name="description" content="Descubre cuales son mis habilidades en el mundon del desarrollo de software, que nivel tengo en cada una de ellas y cuál es mi trayectoria profesional" />
       </Helmet>
       <PortfolioContainer
         classContainer="skills_container"

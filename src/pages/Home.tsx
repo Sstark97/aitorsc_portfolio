@@ -29,7 +29,7 @@ const Home = () => {
         <meta name="title" content="ASC | Full Stack Developer" />
         <meta
           name="description"
-          content="Soy Desarrollador Web Full-Stack, con el stack MERN aunque también tengo conocimientos de Angular, al que le gusta actualizarse constantemente y desarrollar mi mayor pasión, programar webapps o cualquier tipo de software."
+          content="Soy Desarrollador Web Full-Stack, especializado en el stack MERN, que desarrollar su mayor pasión, programar webapps o cualquier tipo de software."
         />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta
@@ -38,7 +38,11 @@ const Home = () => {
         />
         <meta name="theme-color" content="#ffffff" />
       </Helmet>
-      <PortfolioContainer classContainer="home_container" animationKey="home" animationTime={7500}>
+      <PortfolioContainer
+        classContainer="home_container"
+        animationKey="home"
+        animationTime={7500}
+      >
         {portFolio !== undefined ? (
           <Presentation home>
             <article className="presentation_container">
@@ -52,7 +56,9 @@ const Home = () => {
                 <SocialNetworks />
               </div>
               <button className="presentation_btn">
-                <Link to="/contact" tabIndex={-1}>Contáctame</Link>
+                <Link to="/contact" tabIndex={-1}>
+                  Contáctame
+                </Link>
               </button>
             </article>
             <Moon id="moon_svg" />
