@@ -20,18 +20,14 @@ export const AppProvider = memo(({ children }: ChildrenProps) => {
   const [theme, setTheme] = useState<string>("dark");
 
   const loadDataOption: LoadDataObject = {
+    "user":setPortfolio,
     "skills": setSkillData,
     "work": setExperienceData,
     "projects": setProjectsData,
   }
 
-  const loadPortfolio = async () => {
-    const portfolioInLocale = await isInLocale<Portfolio>("portfolio_data","/user");
-    setPortfolio(portfolioInLocale);
-  };
-
   const loadData = async (endPoint: string) => {
-    const dataState = await isInLocale<Skill[] | Experience[] | Project[]>(`${endPoint}_data`,endPoint);
+    const dataState = await isInLocale<Portfolio | Skill[] | Experience[] | Project[]>(`${endPoint}_data`,endPoint);
     loadDataOption[endPoint](dataState);
   };
 
@@ -54,7 +50,6 @@ export const AppProvider = memo(({ children }: ChildrenProps) => {
         experienceData,
         projectsData,
         theme,
-        loadPortfolio,
         loadData,
         handleChangeTheme,
         loadDarkMode,

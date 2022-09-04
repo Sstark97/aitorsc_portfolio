@@ -1,6 +1,6 @@
 import { useState, memo } from "react";
 import ProjectTextCard from "@components/ProjectTextCard";
-import ExpandedIcon from "@components/ExpandedIcon";
+import { ReactComponent as ExpandedIcon} from "@assets/expanded_icon.svg";
 import { Project } from "../types";
 import "@styles/containers/project_card.scss";
 
@@ -26,7 +26,7 @@ const ProjectCard = memo(({ name, image, description, repository, web }: Project
       )}
 
       <ProjectTextCard name={name} description={description} repository={repository} web={web} />
-      <ExpandedIcon handleClickExpanded={handleClickExpanded} />
+      <ExpandedIcon className="expanded_icon" onClick={handleClickExpanded} />
     </section>
   );
 });
