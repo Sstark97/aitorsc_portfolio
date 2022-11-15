@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "@hooks/index";
@@ -10,17 +9,7 @@ import PortfolioContainer from "../containers/PortfolioContainer";
 import LoadingSpinner from "../components/LoadingSpinner";
 
 const Home = () => {
-  const [presentation, setPresentation] = useState<string>("");
-  const [name, setName] = useState<string>("");
-
   const { portFolio }: AppState = useGlobalContext();
-
-  useEffect(() => {
-    if (portFolio !== undefined) {
-      setPresentation(portFolio.presentation);
-      setName(portFolio.name);
-    }
-  }, [portFolio, presentation, name]);
 
   return (
     <>
@@ -48,11 +37,11 @@ const Home = () => {
             <article className="presentation_container">
               <div className="presentation_header">
                 <p className="line__1">Hola, </p>
-                <p className="line__2">soy {name},</p>
+                <p className="line__2">soy Aitor,</p>
                 <p className="line__3">Desarrollador Full Stack</p>
               </div>
               <div className="presentation">
-                {presentation}
+                Hola, soy 💡Desarrollador Web Full-Stack💡, con experiencia en el stack MERN aunque también tengo conocimientos de Angular, al que le gusta actualizarse constantemente y desarrollar mi mayor pasión, programar webapps o cualquier tipo de software.
                 <SocialNetworks />
               </div>
               <button className="presentation_btn">
